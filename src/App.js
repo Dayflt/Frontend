@@ -19,7 +19,7 @@ function App() {
               <div className='InputBox'></div>
           </div>
         <button className="RunButton" href="">
-          합치기
+          바꾸기
         </button>
       </header>
     </div>
