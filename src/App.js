@@ -1,6 +1,9 @@
 import './App.css';
 import star from './img/star110.png';
 import plus from './img/plus.png';
+import {Link} from "react-router-dom";
+import Result from './Page_result';
+import {Route} from "react-router-dom";
 
 function App() {
   return (
@@ -18,9 +21,12 @@ function App() {
               <img src={plus} className="Plus-logo" alt="logo" />
               <div className='InputBox'></div>
           </div>
-        <button className="RunButton" href="">
+        <Link to ="./Page_result">
+        <button className="RunButton">
           바꾸기
         </button>
+        </Link>
+        <Route path="/Page_result"><Result /></Route>
       </header>
     </div>
   );

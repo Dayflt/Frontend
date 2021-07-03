@@ -16,4 +16,4 @@ function P_Home() {
     </div>
   );
 }
-export default App;
+export default P_Home;

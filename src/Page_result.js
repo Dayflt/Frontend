@@ -1,12 +1,11 @@
 import './App.css';
 import star from './img/star110.png';
 
-function P_Reult() {
+function Result() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>
-         <img src={star} className="Star-logo" alt="logo"></img>
              Synthesize Images
         </h1>
         <h3>
@@ -16,4 +15,4 @@ function P_Reult() {
     </div>
   );
 }
-export default App;
+export default Result;
