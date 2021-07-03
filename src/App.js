@@ -1,34 +1,19 @@
-import './App.css';
-import star from './img/star110.png';
-import plus from './img/plus.png';
-import {Link} from "react-router-dom";
-import Result from './Page_result';
-import {Route} from "react-router-dom";
+import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './page/Home';
+import Result from './page/Result';
+import Selection from './page/Selection';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-         <img src={star} className="Star-logo" alt="logo"></img>
-             Synthesize Images
-        </h1>
-        <h3>
-          본인 얼굴과 닮고 싶은 사람의 얼굴을 업로드 하세요!
-        </h3>
-          <div className="InputImage">  
-              <div className='InputBox'></div>
-              <img src={plus} className="Plus-logo" alt="logo" />
-              <div className='InputBox'></div>
-          </div>
-        <Link to ="./Page_result">
-        <button className="RunButton">
-          바꾸기
-        </button>
-        </Link>
-        <Route path="/Page_result"><Result /></Route>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render(){
+    return(
+      <BrowserRouter>
+        <Route path="/"component={Home} exact={true} />
+        <Route path="/selection" component={Selection} />
+        <Route path="/result" component={Result} />
+      </BrowserRouter> 
+    )
+  }
 }
+
 export default App;
