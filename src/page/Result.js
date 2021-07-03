@@ -2,7 +2,6 @@ import './css/Page.css';
 import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
-import plus from './img/plus.png';
 
 const Result =() => {
   return (
