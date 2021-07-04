@@ -15,13 +15,16 @@ const Selection =() => {
           <h3>
             바뀌고 싶은 얼굴을 선택하세요!
           </h3>
-            <div className='InputBox'>  
-                <button className='SlectButton'> 1</button>
-                <button className='SlectButton'> 2</button>
-                <button className='SlectButton'> 3</button>
-                <button className='SlectButton'> 4</button>
+            <div className='ImageBox'>
+              <div className='SelectButton'>  
+                <button> 1</button>
+                <button> 2</button>
+                <button> 3</button>
+                <button> 4</button>
+              </div>
                 <div className='InputBox'></div>
             </div>
+            <div>
           <Link to ="./">
            <button className="RunButton">
               BACK
@@ -32,6 +35,7 @@ const Selection =() => {
               NEXT
            </button>
           </Link>
+          </div>
         </header>
       </div>
     );

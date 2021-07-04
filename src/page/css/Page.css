@@ -53,8 +53,8 @@
   margin: 5%;
 }
 
-.InputImage{
-  display:flex; 
+.ImageBox{
+  display:inline-flex; 
   align-items: center;
   text-align: center;
 }
