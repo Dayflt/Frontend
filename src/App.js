@@ -11,6 +11,7 @@ class App extends React.Component {
         <Route path="/"component={Home} exact={true} />
         <Route path="/selection" component={Selection} />
         <Route path="/result" component={Result} />
+        <Route path="/webcam" component={Webcam} />
       </BrowserRouter> 
     )
   }
