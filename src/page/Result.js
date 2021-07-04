@@ -16,7 +16,7 @@ const Result =() => {
         </h3>
         <Link to ="./">
           <button className="RunButton">
-            바꾸기
+            다시하기
           </button>
         </Link>
       </header>

@@ -13,16 +13,23 @@ const Selection =() => {
                Synthesize Images
           </h1>
           <h3>
-            본인 얼굴과 닮고 싶은 사람의 얼굴을 업로드 하세요!
+            바뀌고 싶은 얼굴을 선택하세요!
           </h3>
-            <div className="InputImage">  
-                <div className='InputBox'></div>
-                <img src={plus} className="Plus-logo" alt="logo" />
+            <div className='InputBox'>  
+                <button className='SlectButton'> 1</button>
+                <button className='SlectButton'> 2</button>
+                <button className='SlectButton'> 3</button>
+                <button className='SlectButton'> 4</button>
                 <div className='InputBox'></div>
             </div>
+          <Link to ="./">
+           <button className="RunButton">
+              BACK
+           </button>
+          </Link>
           <Link to ="./Result">
            <button className="RunButton">
-             바꾸기
+              NEXT
            </button>
           </Link>
         </header>
