@@ -2,7 +2,7 @@ import './css/Page.css';
 import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
-import plus from './img/plus.png';
+//import plus from './img/plus.png';
 
 const Selection =() => {
     return (
@@ -16,13 +16,15 @@ const Selection =() => {
             바뀌고 싶은 얼굴을 선택하세요!
           </h3>
             <div className='ImageBox'>
-              <div className='SelectButton'>  
-                <button> 1</button>
-                <button> 2</button>
-                <button> 3</button>
-                <button> 4</button>
+              <div>  
+                <button className='SelectButton'> 1</button>
+                <button className='SelectButton'> 2</button>
+                <button className='SelectButton'> 3</button>
+                <button className='SelectButton'> 4</button>
               </div>
-                <div className='InputBox'></div>
+                <div className='InputBox'>
+                  여기에 선택에 따른 이미지가 들어감
+                </div>
             </div>
             <div>
           <Link to ="./">
