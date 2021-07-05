@@ -1,4 +1,4 @@
-import './css/Result.css';
+import './css/Share.css';
 import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
@@ -18,8 +18,15 @@ const Share = () => {
               
             </div>
             <div className="button_box">
-              <Link to ="./">
-                <button className="GalleryButton">
+                <input className="nickname">
+                </input>
+                <div className="emoticon_box">
+                  <div className="emoticon">
+                    🤣😚🙃😱
+                  </div>
+                </div>
+              <Link to ="./gallery">
+                <button className="galleryButton">
                     Share it!
                 </button>
               </Link>
