@@ -12,11 +12,16 @@ const Home =() => {
              Synthesize Images
         </h1>
         <h3>
-          NEXT 버튼을 눌러서 시작하세요!
+          START 버튼을 눌러서 시작하세요!
         </h3>
         <Link to ="./Selection">
           <button className="RunButton">
-            NEXT
+            START!
+          </button>
+        </Link>
+        <Link to ="./Gallery">
+          <button className="GalleryButton">
+             갤러리 보러가기
           </button>
         </Link>
       </header>
