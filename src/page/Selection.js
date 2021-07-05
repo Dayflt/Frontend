@@ -1,10 +1,16 @@
 import './css/Page.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
+import one from './img/1.jpg';
+import two from './img/2.jpg';
+import thr from './img/3.jpg';
+import four from './img/4.jpg';
 //import plus from './img/plus.png';
 
 const Selection =() => {
+    let [pic, modi] = useState ([one, two, thr, four]);
+    let [num, m_num] = useState(0); //num이 현재 무엇을 선택했는지
     return (
       <div className="Page">
         <header className="Page-header">
@@ -17,13 +23,13 @@ const Selection =() => {
           </h3>
             <div className='ImageBox'>
               <div>  
-                <button className='SelectButton'> 1</button>
-                <button className='SelectButton'> 2</button>
-                <button className='SelectButton'> 3</button>
-                <button className='SelectButton'> 4</button>
+                <button className='SelectButton' onClick={ ()=> { m_num(0)}}> 1</button>
+                <button className='SelectButton' onClick={ ()=> { m_num(1)}}> 2</button>
+                <button className='SelectButton' onClick={ ()=> { m_num(2)}}> 3</button>
+                <button className='SelectButton' onClick={ ()=> { m_num(3)}}> 4</button>
               </div>
-                <div className='InputBox'>
-                  여기에 선택에 따른 이미지가 들어감
+                <div className='InputBox'> 
+                  <img className='SelectImg' src={ pic[num]} alt="select img"></img>
                 </div>
             </div>
             <div>
@@ -32,7 +38,7 @@ const Selection =() => {
               BACK
            </button>
           </Link>
-          <Link to ="./Result">
+          <Link to ="./record">
            <button className="RunButton">
               NEXT
            </button>
