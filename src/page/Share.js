@@ -25,7 +25,7 @@ const Share = () => {
                     🤣😚🙃😱
                   </div>
                 </div>
-              <Link to ="./gallery">
+              <Link to ="./Gallery">
                 <button className="galleryButton">
                     Share it!
                 </button>
