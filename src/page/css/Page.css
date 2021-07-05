@@ -70,11 +70,18 @@
   padding: 10px;
 }
 
+.SelectImg {
+  width: 600px;
+  height: 600px;
+  object-fit: contain;
+}
+
+
 .SelectButton {
   text-align: center;
   background-color: #c4c4c4;
   border-radius: 10px;
   font-size: 2em;
-  margin: 15px;
-  vertical-align: middle;
+  display: block;
+  margin: 80px;
 }
