@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.Page {
+  background-color: #f2ddcc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: cal(10px + 2vmin);
+  color: black;
+  text-align: center;
+}
+
+.Star-logo {
+  height: 5vmin;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.Page-header {
+  width: 80%;
+  border-radius: 10px;
+  border: solid 1.5px #f6f7fa;
+  margin: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+.step_box{
+    background-color: #c4c4c4;
+}
+.photo_box{
+    clear: both;
+}
+.photo_box img{
+    width: 20vmin;
+    height: 20vmin;
+    margin: 25px;
+}
+.button_box{
+    clear: both;
+}
+.StartButton {
+    background-color: #c4c4c4;
+    text-align: center;
+    color: black;
+    border-radius: 15px;
+    width: 300px;
+    height: 120px;
+    font-size: 45px;
+    font-family: 'Jua', sans-serif;
+    margin: 5%;
+}
+.GalleryButton {
+  text-align: center;
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  font-size: 30px;
+  margin: 15px;
+  vertical-align: middle;
+  font-family: 'Jua', sans-serif;
+}

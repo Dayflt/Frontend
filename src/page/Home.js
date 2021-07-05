@@ -1,7 +1,8 @@
-import './css/Page.css';
+import './css/Home.css';
 import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
+import photo from'./img/monalisa.jpg'
 
 const Home =() => {
   return (
@@ -11,19 +12,44 @@ const Home =() => {
          <img src={star} className="Star-logo" alt="logo"></img>
              Synthesize Images
         </h1>
-        <h3>
-          START 버튼을 눌러서 시작하세요!
-        </h3>
-        <Link to ="./Selection">
-          <button className="RunButton">
-            START!
-          </button>
-        </Link>
-        <Link to ="./Gallery">
-          <button className="GalleryButton">
-             갤러리 보러가기
-          </button>
-        </Link>
+        <h4>
+          START 버튼을 눌러 시작하세요!
+        </h4>
+        <div className="step_box">
+          <div className="step">
+            <h6>
+              SELECTION <br></br> 옵션 사진 선택 
+            </h6>
+          </div>
+          <div className="step">
+            <h6>
+              WEBCAM <br></br> 합성하고 싶은 영상 찍기
+            </h6>
+          </div>
+          <div className="step">
+            <h6>
+              RESULT <br></br> 결과 사진 확인
+            </h6>
+          </div>
+        </div>
+        <div className="photo_box">
+          <img src={photo}></img>
+          <img src={photo}></img>
+          <img src={photo}></img>
+        </div>
+        
+        <div className="button_box">
+          <Link to ="./Selection">
+            <button className="StartButton">
+              START!
+            </button>
+          </Link>
+          <Link to ="./Gallery">
+            <button className="GalleryButton">
+              갤러리보러가기
+            </button>
+          </Link>
+          </div>
       </header>
     </div>
   );
