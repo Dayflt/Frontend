@@ -15,21 +15,23 @@ const Home =() => {
         <h4>
           START 버튼을 눌러 시작하세요!
         </h4>
-        <div className="step_box">
-          <div className="step">
-            <h5>
-              SELECTION <br></br> 옵션 사진 선택 
-            </h5>
-          </div>
-          <div className="step">
-            <h5>
-              WEBCAM <br></br> 합성하고 싶은 영상 찍기
-            </h5>
-          </div>
-          <div className="step">
-            <h5>
-              RESULT <br></br> 결과 사진 확인
-            </h5>
+        <div className="step_bigbox">
+          <div className="step_box">
+            <div className="step">
+              <h5>
+                SELECTION <br></br> 옵션 사진 선택 
+              </h5>
+            </div>
+            <div className="step">
+              <h5>
+                WEBCAM <br></br> 합성하고 싶은 영상 찍기
+              </h5>
+            </div>
+            <div className="step">
+              <h5>
+                RESULT <br></br> 결과 사진 확인
+              </h5>
+            </div>
           </div>
         </div>
         <div className="photo_box">

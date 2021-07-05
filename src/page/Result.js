@@ -20,7 +20,7 @@ const Result =() => {
               Save Video
             </button>
           </Link>
-          <Link to ="./gallery">
+          <Link to ="./share">
             <button className="ShareButton">
               Share
             </button>

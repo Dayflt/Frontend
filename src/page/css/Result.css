@@ -37,7 +37,7 @@
 .result{
     display: inline-block;
     background-color: rgb(175, 175, 175);
-    width: 1000px;
+    width: 70%;
     height: 800px;
 }
 .SaveButton {
