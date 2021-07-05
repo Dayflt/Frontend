@@ -31,23 +31,38 @@
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
 }
-
-.step_box{
+.result_box{
+    text-align: center;
+}
+.result{
+    display: inline-block;
+    background-color: rgb(175, 175, 175);
+    width: 1000px;
+    height: 800px;
+}
+.SaveButton {
+    text-align: center;
     background-color: #c4c4c4;
-    padding: 10px;
+    border-radius: 30px;
+    width: 200px;
+    height: 70px;
+    font-size: 30px;
+    margin: 15px;
+    vertical-align: middle;
+    font-family: 'Jua', sans-serif;
 }
-.photo_box{
-    clear: both;
+.ShareButton {
+    text-align: center;
+    background-color: #c4c4c4;
+    border-radius: 30px;
+    width: 200px;
+    height: 70px;
+    font-size: 30px;
+    margin-left: 300px;
+    vertical-align: middle;
+    font-family: 'Jua', sans-serif;
 }
-.photo_box img{
-    width: 15vmin;
-    height: 15vmin;
-    margin: 25px;
-}
-.button_box{
-    clear: both;
-}
-.StartButton {
+.RetryButton {
     background-color: #c4c4c4;
     text-align: center;
     color: black;
@@ -57,13 +72,4 @@
     font-size: 45px;
     font-family: 'Jua', sans-serif;
     margin: 5%;
-}
-.GalleryButton {
-  text-align: center;
-  background-color: #c4c4c4;
-  border-radius: 10px;
-  font-size: 30px;
-  margin: 15px;
-  vertical-align: middle;
-  font-family: 'Jua', sans-serif;
 }

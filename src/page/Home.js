@@ -17,19 +17,19 @@ const Home =() => {
         </h4>
         <div className="step_box">
           <div className="step">
-            <h6>
+            <h5>
               SELECTION <br></br> 옵션 사진 선택 
-            </h6>
+            </h5>
           </div>
           <div className="step">
-            <h6>
+            <h5>
               WEBCAM <br></br> 합성하고 싶은 영상 찍기
-            </h6>
+            </h5>
           </div>
           <div className="step">
-            <h6>
+            <h5>
               RESULT <br></br> 결과 사진 확인
-            </h6>
+            </h5>
           </div>
         </div>
         <div className="photo_box">
