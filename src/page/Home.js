@@ -12,7 +12,7 @@ const Home =() => {
              Synthesize Images
         </h1>
         <h3>
-          NEXT 버튼을 눌러서 시작하세요!
+          PUSH NEXT to Start!
         </h3>
         <Link to ="./Selection">
           <button className="RunButton">
