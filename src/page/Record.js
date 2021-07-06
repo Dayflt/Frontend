@@ -1,13 +1,11 @@
 import './css/Page.css';
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useRecordWebcam } from 'react-record-webcam'
+import RecordVideo from './Cam';
+//import { useRecordWebcam } from 'react-record-webcam'
+//import RecordRTC from 'recordrtc';
 
 const Record = () => {
-
-  function Video() {
-    navi
-  }
 
   return (
     <div className="Page">
@@ -18,6 +16,9 @@ const Record = () => {
         </div>
         {Record}
       </header>
+      
+      <RecordVideo/>
+      
       <Link to ="./Selection">
            <button className="RunButton">
               BACK
