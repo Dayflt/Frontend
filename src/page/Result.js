@@ -4,21 +4,6 @@ import { Link } from "react-router-dom";
 import star from './img/star110.png';
 import axios from 'axios'
 
-
-const test = () => {
-  axios.get('https://reqres.in/api/users?page=2')
-  .then(response =>{
-    // handle success
-    console.log(response);
-  })
-  .catch(error => {
-    // handle error
-    console.log(error);
-  })
-  .then(() => {
-    // always executed
-  }); }//get방식 test
-
 const Result =() => {
   return (
     <div className="Page">
@@ -43,7 +28,7 @@ const Result =() => {
           </Link>
         </div>
         <div className="button_box2">
-            <button className="RetryButton" onClick={test}> 
+            <button className="RetryButton"> 
               TRY AGAIN
             </button>
         </div>
