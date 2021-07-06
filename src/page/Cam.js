@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Webcam from "react-webcam";
 import RecordRTC, { invokeSaveAsDialog } from 'recordrtc';
+import './css/Page.css';
 
 function RecordVideo() {
   const [stream, setStream] = useState(null);
@@ -43,21 +43,21 @@ function RecordVideo() {
   }, [stream, refVideo]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={handleRecording}>start</button>
-        <button onClick={handleStop}>stop</button>
-        <button onClick={handleSave}>save</button>
-        
-        {blob && (
+    <div>
+      <div className="InputBox" style={{width:700, margin: '1em'}}>두둥!
+      {blob && (
           <video
             src={URL.createObjectURL(blob)}
             controls
             autoPlay
             ref={refVideo}
-            style={{ width: '700px', margin: '1em' }}
+            style={{ width: '700px', margin: '1em', alignitems: 'center', textalign: 'center'}}
           />
-        )}
+        )}</div>
+      <header style={{backgroundColor: 'white', display: 'block'}}>
+        <button className="RecordButton" onClick={handleRecording}>record</button>
+        <button className="RecordButton" onClick={handleStop} style={{backgroundColor: "red"}}>Stop</button>
+        <button className="RecordButton" onClick={handleSave}>retry</button>
       </header>
     </div>
   );
