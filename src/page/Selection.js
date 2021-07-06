@@ -32,7 +32,7 @@ const Selection =() => {
               BACK
            </button>
           </Link>
-          <Link to ="./Result">
+          <Link to ="./Record">
            <button className="RunButton">
               NEXT
            </button>
