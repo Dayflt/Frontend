@@ -2,6 +2,22 @@ import './css/Result.css';
 import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
+import axios from 'axios'
+
+
+const test = () => {
+  axios.get('https://reqres.in/api/users?page=2')
+  .then(response =>{
+    // handle success
+    console.log(response);
+  })
+  .catch(error => {
+    // handle error
+    console.log(error);
+  })
+  .then(() => {
+    // always executed
+  }); }//get방식 test
 
 const Result =() => {
   return (
@@ -27,11 +43,9 @@ const Result =() => {
           </Link>
         </div>
         <div className="button_box2">
-          <Link to ="./">
-            <button className="RetryButton">
+            <button className="RetryButton" onClick={test}> 
               TRY AGAIN
             </button>
-          </Link>
         </div>
       </header>
     </div>
