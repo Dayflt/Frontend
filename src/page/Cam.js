@@ -8,7 +8,7 @@ function RecordVideo() {
   const refVideo = useRef(null);
   const recorderRef = useRef(null);
 
-  const handleRecording = async () => {
+  const handleRecording = async () => { //시작 함수인데;
     const cameraStream = await navigator.mediaDevices.getUserMedia({ 
       video: {
         width: 1920,
@@ -24,17 +24,19 @@ function RecordVideo() {
     recorderRef.current.startRecording();
   };
 
-  const handleStop = () => {
+  const handleStop = () => { // 정지함수
     recorderRef.current.stopRecording(() => {
       setBlob(recorderRef.current.getBlob());
     });
   };
 
-  const handleSave = () => {
-    invokeSaveAsDialog(blob);
+
+  const handleSave = () => { // 저장함수
+    recorderRef.current.reset();
+    //invokeSaveAsDialog(blob);
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     if (!refVideo.current) {
       return;
     }
@@ -44,14 +46,14 @@ function RecordVideo() {
 
   return (
     <div>
-      <div className="InputBox" style={{width:700, margin: '1em'}}>두둥!
+      <div className="InputBox" style={{width: '80%', height: '30%'}}>두둥!
       {blob && (
           <video
             src={URL.createObjectURL(blob)}
-            controls
             autoPlay
+            loop
             ref={refVideo}
-            style={{ width: '700px', margin: '1em', alignitems: 'center', textalign: 'center'}}
+            style={{ width: '100%', alignitems: 'center', textalign: 'center'}}
           />
         )}</div>
       <header style={{backgroundColor: 'white', display: 'block'}}>

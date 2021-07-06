@@ -30,7 +30,7 @@
 }
 
 .Page-header {
-  width: 50%;
+  width: 60%;
   border-radius: 10px;
   border: solid 1.5px #f6f7fa;
   margin: 20px;
@@ -66,13 +66,13 @@
   background-color: #c4c4c4;
   border-radius: 10px;
   display: inline-block;
-  width: 600px;
+  width: 450px;
   height: 600px;
   padding: 10px;
 }
 
 .SelectImg {
-  width: 600px;
+  width: 450px;
   height: 600px;
   object-fit: contain;
 }
