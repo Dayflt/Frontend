@@ -20,7 +20,8 @@ const Result =() => {
             loop="true"
             playing="true"
             muted="true"
-            >
+            width="60%"
+            height="60%">
           </ReactPlayer>
         </div>
         <div className="button_box1">
