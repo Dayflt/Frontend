@@ -1,5 +1,6 @@
 import './css/Share.css';
 import React from 'react';
+import ReactPlayer from 'react-player';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
 
@@ -12,7 +13,10 @@ const Share = () => {
                  Synthesize Images
             </h1>
               <div className="result_box">
-               <div className="result"></div>
+                <ReactPlayer 
+                url='https://www.youtube.com/watch?v=fIYr8hbos_4'>
+
+                </ReactPlayer>
               </div>
             <div className="share_box">
               
