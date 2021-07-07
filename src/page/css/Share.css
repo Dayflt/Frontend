@@ -45,8 +45,7 @@
 .nickname{
     width: 250px;
     display: inline-block;
-    border-radius: 30px;
-    font-size: 50px;
+    font-size: 45px;
     padding:1.5%;
 }
 .emoticon_box{
@@ -69,40 +68,39 @@
 @media all and (max-width:1200px){
 }
 @media all and (max-width:960px){
+    .nickname{
+        width: 200px;
+        font-size: 40px;
+        padding:1.5%;
+      }
 }
 @media all and (max-width:768px){
   .Page-header > h1{
     font-size: 35px;
   }
-  .SaveButton{
-    font-size: 25px;
-    margin: 15px 5% 0 0 ;
+  .nickname{
+    width: 200px;
+    font-size: 30px;
+    padding:1.5%;
   }
-  .ShareButton{
-    font-size: 25px;
-    margin: 15px 0 0 5% ;
-  }
-  .RetryButton {
-    font-size: 25px;
-  }
+  .galleryButton {
+    padding: 1% 2% 1% 2% ;
+    font-size: 30px;
+ }
+    .emoticon{
+        font-size: 40px;
+    }
 }
 @media all and (max-width:320px){
   .Page-header > h4{
     font-size: 15px;
   }
   .nickname{
-    width: 250px;
-    display: inline-block;
-    border-radius: 30px;
-    font-size: 50px;
+    width: 80%;
+    font-size: 30px;
     padding:1.5%;
-  }/*닉네임 수정 해야함*/
-  .SaveButton{
-    font-size: 20px;
-    margin: 15px 0 0 0 ;
   }
-  .ShareButton{
-    font-size: 20px;
-    margin: 15px 0 0 0 ;
+  .emoticon{
+    font-size: 30px;
   }
 }

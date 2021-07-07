@@ -18,7 +18,9 @@ const Share = () => {
                 className="result"
                 loop="true"
                 playing="true"
-                muted="true">
+                muted="true"
+                width="60%"
+                height="60%">
                 </ReactPlayer>
               </div>
             <div className="share_box">
@@ -26,15 +28,14 @@ const Share = () => {
             </div>
             <div className="button_box">
               <form>
-                <input className="nickname">
-                </input>
+                <input type="text" className="nickname" name="/api/model/gallery/{model_id}"></input>
                 <div className="emoticon_box">
                   <div className="emoticon">
                     🤣😚🙃😱
                   </div>
                 </div>
                 <Link to ="./Gallery">
-                  <button className="galleryButton">
+                  <button className="galleryButton" onClick="">
                     Share it!
                   </button>
                 </Link>
