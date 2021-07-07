@@ -6,7 +6,6 @@ import one from './img/1.jpg';
 import two from './img/2.jpg';
 import thr from './img/3.jpg';
 import four from './img/4.jpg';
-//import plus from './img/plus.png';
 
 const Selection =() => {
     let [pic, modi] = useState ([one, two, thr, four]);
