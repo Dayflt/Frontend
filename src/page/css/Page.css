@@ -30,7 +30,6 @@
 }
 
 .Page-header {
-  width: 80%;
   border-radius: 10px;
   border: solid 1.5px #f6f7fa;
   margin: 20px;
@@ -50,31 +49,18 @@
   height: 120px;
   font-size: 45px;
   font-family: 'Jua', sans-serif;
-  margin: 5%;
 }
 
-.ImageBox{
-  display:inline-flex; 
+.InputImage{
+  display:flex; 
   align-items: center;
-  text-align: center;
 }
 
 .InputBox {
-  align-items: center;
-  text-align: center;
   background-color: #c4c4c4;
   border-radius: 10px;
-  display: block;
-  width: 600px;
-  height: 600px;
-  padding: 10px;
-}
-
-.SelectButton {
-  text-align: center;
-  background-color: #c4c4c4;
-  border-radius: 10px;
-  font-size: 2em;
-  margin: 15px;
-  vertical-align: middle;
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  padding: 80px;
 }

@@ -51,7 +51,7 @@
 .photo_box img{
     width: 15vmin;
     height: 15vmin;
-    margin: 25px;
+    margin: 3%;
 }
 .button_box{
     clear: both;
@@ -101,8 +101,11 @@
   .photo_box img{
     width: 100px;
     height: 100px;
-    margin: 25px;
+    margin: 2%;
  }
+ .StartButton {
+  font-size: 25px;
+}
   .GalleryButton {
     font-size: 20px;
   }
@@ -119,6 +122,6 @@
   .photo_box img{
     width: 100px;
     height: 100px;
-    margin: 25px;
+    margin: 2%;
 }
 }
