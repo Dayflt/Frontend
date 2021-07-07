@@ -14,7 +14,8 @@ const Share = () => {
             </h1>
               <div className="result_box">
                 <ReactPlayer 
-                url='https://www.youtube.com/watch?v=fIYr8hbos_4'>
+                url='https://www.youtube.com/watch?v=fIYr8hbos_4'
+                loop={true}>
 
                 </ReactPlayer>
               </div>

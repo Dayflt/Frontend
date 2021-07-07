@@ -44,10 +44,9 @@
     text-align: center;
     background-color: #c4c4c4;
     border-radius: 30px;
-    width: 200px;
-    height: 70px;
     font-size: 30px;
-    margin: 15px;
+    margin: 15px 10% 0 0 ;
+    padding: 1% 2% 1% 2% ;
     vertical-align: middle;
     font-family: 'Jua', sans-serif;
 }
@@ -55,10 +54,9 @@
     text-align: center;
     background-color: #c4c4c4;
     border-radius: 30px;
-    width: 200px;
-    height: 70px;
     font-size: 30px;
-    margin-left: 300px;
+    margin: 15px 0 0 10% ;
+    padding: 1% 2% 1% 2% ;
     vertical-align: middle;
     font-family: 'Jua', sans-serif;
 }
@@ -67,9 +65,44 @@
     text-align: center;
     color: black;
     border-radius: 15px;
-    width: 300px;
-    height: 120px;
-    font-size: 45px;
+    font-size: 150%;
+    margin: 3%;
+    padding: 3% 6% 3% 6%;
     font-family: 'Jua', sans-serif;
-    margin: 20px;
+}
+@media all and (max-width:1200px){
+}
+@media all and (max-width:960px){
+  .Page-header > h4{
+    font-size: 20px;
+  }
+}
+@media all and (max-width:768px){
+  .Page-header > h1{
+    font-size: 35px;
+  }
+  .SaveButton{
+    font-size: 25px;
+    margin: 15px 5% 0 0 ;
+  }
+  .ShareButton{
+    font-size: 25px;
+    margin: 15px 0 0 5% ;
+  }
+  .RetryButton {
+    font-size: 25px;
+  }
+}
+@media all and (max-width:320px){
+  .Page-header > h4{
+    font-size: 15px;
+  }
+  .SaveButton{
+    font-size: 20px;
+    margin: 15px 0 0 0 ;
+  }
+  .ShareButton{
+    font-size: 20px;
+    margin: 15px 0 0 0 ;
+  }
 }
