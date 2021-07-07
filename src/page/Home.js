@@ -51,7 +51,7 @@ const Home =() => {
               갤러리보러가기
             </button>
           </Link>
-          </div>
+        </div>
       </header>
     </div>
   );
