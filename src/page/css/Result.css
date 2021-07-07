@@ -36,9 +36,6 @@
 }
 .result{
     display: inline-block;
-    background-color: rgb(175, 175, 175);
-    width: 60%;
-    height: 500px;
 }
 .SaveButton {
     text-align: center;

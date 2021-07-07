@@ -36,24 +36,22 @@
 }
 .result{
     display: inline-block;
-    background-color: rgb(175, 175, 175);
-    width: 60%;
-    height: 500px;
 }
+
 .button_box{
     text-align: center;
     margin-top: 20px;
 }
 .nickname{
-    width: 300px;
-    height: 100px;
+    width: 250px;
     display: inline-block;
     border-radius: 30px;
     font-size: 50px;
+    padding:1.5%;
 }
 .emoticon_box{
     display: inline-block;
-    margin: 30px;
+    margin: 2% 3% 2% 2%;
 }
 .emoticon{
     display: inline-block;
@@ -63,10 +61,48 @@
     background-color: #c4c4c4;
     text-align: center;
     color: black;
+    padding: 1% 2% 1% 2% ;
     border-radius: 15px;
-    width: 300px;
-    height: 120px;
     font-size: 45px;
     font-family: 'Jua', sans-serif;
-    margin-bottom: 5%;
+}
+@media all and (max-width:1200px){
+}
+@media all and (max-width:960px){
+}
+@media all and (max-width:768px){
+  .Page-header > h1{
+    font-size: 35px;
+  }
+  .SaveButton{
+    font-size: 25px;
+    margin: 15px 5% 0 0 ;
+  }
+  .ShareButton{
+    font-size: 25px;
+    margin: 15px 0 0 5% ;
+  }
+  .RetryButton {
+    font-size: 25px;
+  }
+}
+@media all and (max-width:320px){
+  .Page-header > h4{
+    font-size: 15px;
+  }
+  .nickname{
+    width: 250px;
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 50px;
+    padding:1.5%;
+  }/*닉네임 수정 해야함*/
+  .SaveButton{
+    font-size: 20px;
+    margin: 15px 0 0 0 ;
+  }
+  .ShareButton{
+    font-size: 20px;
+    margin: 15px 0 0 0 ;
+  }
 }

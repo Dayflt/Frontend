@@ -1,5 +1,6 @@
 import './css/Result.css';
 import React from 'react';
+import ReactPlayer from 'react-player';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
 import axios from 'axios'
@@ -12,9 +13,16 @@ const Result =() => {
          <img src={star} className="Star-logo" alt="logo"></img>
              Synthesize Images
         </h1>
-          <div className="result_box">
-           <div className="result"></div>
-          </div>
+        <div className="result_box">
+          <ReactPlayer 
+            url='https://storage.googleapis.com/dayfly-bucket/testvid.mp4'
+            className="result"
+            loop="true"
+            playing="true"
+            muted="true"
+            >
+          </ReactPlayer>
+        </div>
         <div className="button_box1">
           <Link to ="./">
             <button className="SaveButton">

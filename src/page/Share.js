@@ -14,15 +14,18 @@ const Share = () => {
             </h1>
               <div className="result_box">
                 <ReactPlayer 
-                url='https://www.youtube.com/watch?v=fIYr8hbos_4'
-                loop={true}>
-
+                url='https://storage.googleapis.com/dayfly-bucket/testvid.mp4'
+                className="result"
+                loop="true"
+                playing="true"
+                muted="true">
                 </ReactPlayer>
               </div>
             <div className="share_box">
               
             </div>
             <div className="button_box">
+              <form>
                 <input className="nickname">
                 </input>
                 <div className="emoticon_box">
@@ -30,11 +33,12 @@ const Share = () => {
                     🤣😚🙃😱
                   </div>
                 </div>
-              <Link to ="./Gallery">
-                <button className="galleryButton">
+                <Link to ="./Gallery">
+                  <button className="galleryButton">
                     Share it!
-                </button>
-              </Link>
+                  </button>
+                </Link>
+              </form>
             </div>
           </header>
         </div>

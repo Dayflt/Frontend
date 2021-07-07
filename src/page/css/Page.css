@@ -30,6 +30,7 @@
 }
 
 .Page-header {
+  width: 60%;
   border-radius: 10px;
   border: solid 1.5px #f6f7fa;
   margin: 20px;
@@ -38,6 +39,7 @@
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
+  text-align: center;
 }
 
 .RunButton {
@@ -49,18 +51,45 @@
   height: 120px;
   font-size: 45px;
   font-family: 'Jua', sans-serif;
+  margin: 30px;
 }
 
-.InputImage{
-  display:flex; 
+.ImageBox{
+  display:inline-flex; 
   align-items: center;
+  text-align: center;
 }
 
 .InputBox {
+  align-items: center;
+  text-align: center;
   background-color: #c4c4c4;
   border-radius: 10px;
-  width: 300px;
-  height: 300px;
-  margin: 50px;
-  padding: 80px;
+  display: inline-block;
+  width: 450px;
+  height: 600px;
+  padding: 10px;
+}
+
+.SelectImg {
+  width: 450px;
+  height: 600px;
+  object-fit: contain;
+}
+
+
+.SelectButton {
+  text-align: center;
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  font-size: 2em;
+  display: block;
+  margin: 80px;
+}
+
+.RecordButton {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  font-size: 2em;
+  margin: 30px;
 }
