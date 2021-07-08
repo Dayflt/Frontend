@@ -8,8 +8,10 @@ import thr from './img/3.jpg';
 import four from './img/4.jpg';
 
 const Selection =() => {
-    let [pic, modi] = useState ([one, two, thr, four]);
+    let [pic, ] = useState ([one, two, thr, four]);
     let [num, m_num] = useState(0); //num이 현재 무엇을 선택했는지
+
+
     return (
       <div className="Page">
         <header className="Page-header">
@@ -37,7 +39,7 @@ const Selection =() => {
               BACK
            </button>
           </Link>
-          <Link to ="./Record">
+          <Link to = {`./Record/${num}`}>  
            <button className="RunButton">
               NEXT
            </button>

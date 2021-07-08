@@ -3,13 +3,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import RecordVideo from './Cam';
 
-const Record = () => {
+const Record = ({ match }) => {
+  const {num} = match.params; 
+
   return (
     <div className="Page">
       <header className="Page-header">
         <h1>영상 녹화 페이지 입니다!</h1>
       <RecordVideo />
-        <Link to="./Selection">
+      {console.log(num)}
+        <Link to="../Selection">
         <button className="RunButton">BACK</button>
       </Link>
       <Link to="./Result">
