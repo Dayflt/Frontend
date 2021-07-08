@@ -15,7 +15,6 @@ const Result =() => {
   const closeModal = () => {
       setModalOpen(false);
   }
-
   const clickBack =()=>{
   }
 

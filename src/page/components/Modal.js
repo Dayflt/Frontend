@@ -8,15 +8,15 @@ import "../css/modal.css";
 const Modal = ( props ) => {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close } = props;
-    const [nickname, seNickname] = useState("");
+    const [nickname, setNickname] = useState("");
+    const [emoticon, setEmoticon] = useState("");
 
-    const message = (title, message, type) =>{
+    const message = (message, type) => {
         store.addNotification({
-          title: title,
           message: message,
           type: type,
           insert: "top",
-          container: "top-left",
+          container: "center",
           animationIn: ["animated", "fadeIn"],
           animationOut: ["animated", "fadeOut"],
           dismiss: {
@@ -28,19 +28,26 @@ const Modal = ( props ) => {
         });
     }
     const clickSave = () => {
-        axios.post('https://reqres.in/api/register', {
-          username : nickname,
-          category_id: ""
+        if(nickname===""){
+            message("nickname을 작성해주세요","default")
+            return false;
+        }
+        else{
+            axios.post('/api/model/{model_id}', {
+            username : nickname,
+            category_id: emoticon
         })
         .then(response=>{
           console.log(response);
         })
-        .catch(error=>{
+        .catch(error=> {
           console.log(error);
           message("ERROR", "Please check the console for an error message.", "warning")
-          seNickname("");
+          setNickname("");
+          setEmoticon("");
         });
       }
+    }
     
     /*const clickSave = async () => {
         if (nickname==="") {
@@ -75,24 +82,22 @@ const Modal = ( props ) => {
                 <section>
                     <header>
                         닉네임과 이모티콘을 선택해주세요!
-                        <ReactNotification />
                         <button className="close" onClick={close}> &times; </button>
                     </header>
                     <main>
                         <form method="post">
-                            <input type="text" className="nickname" name="/api/model/gallery/{model_id}" placeholder="닉네임"/>
-                                <select className="emoticon">
-                                    <option>🤣</option>
-                                    <option>😚</option>
-                                    <option>🙃</option>
-                                    <option>😱</option>
-                                </select>
+                            <input required type="text" name="nickname" placeholder="닉네임" onChange={(e) => setNickname(e.target.value) }/>
+                            <select className="emoticon" name="emoticon" onChange={(e) => setEmoticon(e.target.value)}>
+                                <option value="1">🤣</option>
+                                <option value="2">😚</option>
+                                <option value="3">🙃</option>
+                                <option value="4">😱</option>
+                            </select>
                         </form>
                     </main>
+                    <ReactNotification />
                     <footer>
-                        <Link to ="./Gallery">
-                            <button className="close" onClick={clickSave}> Share it! </button>
-                        </Link>
+                        <button className="close" onClick={clickSave}> Share it! </button>
                     </footer>
                 </section>
             ) : null }

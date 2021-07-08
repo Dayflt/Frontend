@@ -63,7 +63,7 @@
     /* 팝업이 열릴때 스르륵 열리는 효과 */
     animation: modal-bg-show .3s;
 }
-.nickname{
+input{
     width: 250px;
     display: inline-block;
     font-size: 45px;
@@ -77,14 +77,14 @@
 @media all and (max-width:1200px){
 }
 @media all and (max-width:960px){
-    .nickname{
+    input{
         width: 200px;
         font-size: 40px;
         padding:1.5%;
       }
 }
 @media all and (max-width:768px){
-  .nickname{
+    input{
     width: 200px;
     font-size: 30px;
   }
@@ -94,7 +94,7 @@
   }
 }
 @media all and (max-width:320px){
-  .nickname{
+    input{
     width: 80%;
     font-size: 30px;
   }
