@@ -1,11 +1,24 @@
 import './css/Result.css';
-import React from 'react';
+import React, {useState} from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
 import axios from 'axios'
+import Modal from './components/Modal';
 
 const Result =() => {
+  const [modalOpen, setModalOpen ] = useState(false);
+  
+  const openModal = () => {
+      setModalOpen(true);
+  }
+  const closeModal = () => {
+      setModalOpen(false);
+  }
+
+  const clickBack =()=>{
+  }
+
   return (
     <div className="Page">
       <header className="Page-header">
@@ -30,14 +43,16 @@ const Result =() => {
               Save Video
             </button>
           </Link>
-          <Link to ="./Share">
-            <button className="ShareButton">
+          <React.Fragment>
+            <button className="ShareButton" onClick={ openModal } >
               Share
             </button>
-          </Link>
+            <Modal open={ modalOpen } close={ closeModal }>
+            </Modal>
+          </React.Fragment>
         </div>
         <div className="button_box2">
-            <button className="RetryButton"> 
+            <button className="RetryButton" onClick={clickBack}> 
               TRY AGAIN
             </button>
         </div>

@@ -27,8 +27,8 @@ const Share = () => {
               
             </div>
             <div className="button_box">
-              <form>
-                <input type="text" className="nickname" name="/api/model/gallery/{model_id}"></input>
+              <form method="post" action="./Gallery">
+                <input type="text" className="nickname" name="/api/model/gallery/{model_id}" placeholder="닉네임"></input>
                 <div className="emoticon_box">
                   <div className="emoticon">
                     🤣😚🙃😱
