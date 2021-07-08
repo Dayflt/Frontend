@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
 
-const Result =() => {
+const Result =({ match }) => {
   return (
     <div className="Page">
       <header className="Page-header">
