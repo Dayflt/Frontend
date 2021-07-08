@@ -4,7 +4,6 @@ import Home from './page/Home';
 import Result from './page/Result';
 import Selection from './page/Selection';
 import Record from './page/Record';
-import Share from './page/Share';
 import Gallery from './page/Gallery';
 
 class App extends React.Component {
@@ -15,7 +14,6 @@ class App extends React.Component {
         <Route path="/selection" component={Selection} />
         <Route path="/result" component={Result} />
         <Route path="/record" component={Record} />
-        <Route path="/share" component={Share} />
         <Route path="/gallery" component={Gallery} />
       </BrowserRouter> 
     )
