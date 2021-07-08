@@ -38,11 +38,9 @@ const Result =() => {
           </ReactPlayer>
         </div>
         <div className="button_box1">
-          <Link to ="./">
             <button className="SaveButton">
               Save Video
             </button>
-          </Link>
           <React.Fragment>
             <button className="ShareButton" onClick={ openModal } >
               Share

@@ -1,47 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.Page {
-  background-color: #f2ddcc;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: cal(10px + 2vmin);
-  color: black;
-  text-align: center;
-}
-
-.Star-logo {
-  height: 5vmin;
-  pointer-events: none;
-  vertical-align: middle;
-}
-
-.Page-header {
-  width: 80%;
-  border-radius: 10px;
-  border: solid 1.5px #f6f7fa;
-  margin: 20px;
-  padding-bottom: 20px;
-  background-color: white;
-  margin-bottom: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 25px;
-}
-.result_box{
-    text-align: center;
-}
-.result{
-    display: inline-block;
-}
-
-.button_box{
-    text-align: center;
-    margin-top: 20px;
-}
 .nickname{
     width: 250px;
     display: inline-block;
@@ -49,22 +5,9 @@
     padding:1.5%;
     margin: 2%;
 }
-.emoticon_box{
-    display: inline-block;
-    margin: 2% 3% 2% 2%;
-}
 .emoticon{
     display: inline-block;
     font-size: 50px;
-}
-.galleryButton {
-    background-color: #c4c4c4;
-    text-align: center;
-    color: black;
-    padding: 1% 2% 1% 2% ;
-    border-radius: 15px;
-    font-size: 45px;
-    font-family: 'Jua', sans-serif;
 }
 @media all and (max-width:1200px){
 }
@@ -76,30 +19,19 @@
       }
 }
 @media all and (max-width:768px){
-  .Page-header > h1{
-    font-size: 35px;
-  }
   .nickname{
     width: 200px;
     font-size: 30px;
-    padding:1.5%;
   }
-  .galleryButton {
-    padding: 1% 2% 1% 2% ;
-    font-size: 30px;
- }
-    .emoticon{
-        font-size: 40px;
-    }
+
+  .emoticon{
+    font-size: 40px;
+  }
 }
 @media all and (max-width:320px){
-  .Page-header > h4{
-    font-size: 15px;
-  }
   .nickname{
     width: 80%;
     font-size: 30px;
-    padding:1.5%;
   }
   .emoticon{
     font-size: 30px;
