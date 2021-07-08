@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
 
-const Result =({ match }) => {
+const Result =() => {
   return (
     <div className="Page">
       <header className="Page-header">
@@ -14,7 +14,7 @@ const Result =({ match }) => {
         <h3>
           결과 페이지 입니당!
         </h3>
-        <Link to ="./">
+        <Link to ="../">
           <button className="RunButton">
             다시하기
           </button>

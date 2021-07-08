@@ -15,7 +15,7 @@ const Record = ({ match }) => {
         <Link to="../Selection">
         <button className="RunButton">BACK</button>
       </Link>
-      <Link to={`./Result/${num}`}> 
+      <Link to={`../Result/${num}`}> 
         <button className="RunButton">NEXT</button>
       </Link>
       </header>

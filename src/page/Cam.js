@@ -3,10 +3,10 @@ import { useRecordWebcam } from 'react-record-webcam';
 import Axios from 'axios';
 import './css/Page.css';
 
-function RecordVideo() {
+function RecordVideo(props) {
   const OPTIONS = { recordingLength: 5, fileType: 'mp4' } // 녹화 제한 시간, 확장자
   const recordWebcam = useRecordWebcam(OPTIONS);
-
+  
   const log = () => { // 로그 확인 용
     //console.log(recordWebcam);
     console.log(recordWebcam.previewRef.current.currentSrc);
@@ -23,7 +23,7 @@ function RecordVideo() {
       header: { 'content-type': 'multipart/form-data' },
     }
     formData.append('file', recordWebcam.previewRef.current.currentSrc); // blob? blob url?
-    formData.append('userpic', 1); // 유저가 무엇을 선택했는지 임시값
+    formData.append('userpic', props.num); // 유저가 무엇을 선택했는지 임시값
     Axios.post('/api/model', formData, config).then((response) => {
       if (response.data.success) {
         console.log(response.data)
