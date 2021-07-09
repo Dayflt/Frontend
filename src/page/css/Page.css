@@ -26,8 +26,10 @@
 }
 
 .Plus-logo {
-  height: 20%;
-  width: 20%;
+  text-align: center;
+  align-items: center;
+  height: 30%;
+  width: 30%;
 }
 
 .Page-header {
@@ -67,14 +69,14 @@
   background-color: #c4c4c4;
   border-radius: 10px;
   display: inline-block;
-  width: 450px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
   padding: 10px;
 }
 
 .SelectImg {
-  width: 450px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 

@@ -23,7 +23,7 @@ const Preview =  ({ match }) => {
           <h3>
             바뀌고 싶은 얼굴을 선택하세요!
           </h3>
-            <div className='ImageBox'>
+            <div className='ImageBox' style={{margin: '3%'}}>
               <div className='InputBox'>  
                   <img className='SelectImg' src={ pic[num]} alt="select img"></img>
               </div>
@@ -32,7 +32,7 @@ const Preview =  ({ match }) => {
               </div>
                 <div className='InputBox'> 
                   <img className='SelectImg' src={ pic[num]} alt="select img"></img>
-                   <video />
+                   {/* <video /> */}
                 </div>
             </div>
             <div>

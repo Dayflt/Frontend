@@ -29,7 +29,7 @@ const Selection =() => {
                 <button className='SelectButton' onClick={ ()=> { m_num(2)}}> 3</button>
                 <button className='SelectButton' onClick={ ()=> { m_num(3)}}> 4</button>
               </div>
-                <div className='InputBox'> 
+                <div className='InputBox' style={ {marginright: '10%' } }> 
                   <img className='SelectImg' src={ pic[num]} alt="select img"></img>
                 </div>
             </div>
