@@ -8,25 +8,46 @@ function RecordVideo(props) {
   const recordWebcam = useRecordWebcam(OPTIONS);
   
   const log = () => { // 로그 확인 용
-    //console.log(recordWebcam);
-    console.log(recordWebcam.previewRef.current.currentSrc);
+    //const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
+    const blob = recordWebcam.blob;
+    console.log(recordWebcam.newblob);
+    //console.log(recordWebcam.previewRef.current.currentSrc);
   };
 
   useEffect(() => {
     recordWebcam.open();
   },[])
 
+  function Selec() {
+    return(
+      <div>
+        <input type="file" name="docx" onChange={setFile.bind(this)} />
+        <input type="button" onClick={postFile} value="Upload" />
+      </div>
+    )
+    function postFile(event) {   
+      // HTTP POST  
+    }
+    function setFile(event) {
+      console.log(event.target.files);
+      const formData = new FormData();
+      formData.append('file', event.target.filesr);
+      console.log(formData.get('file'));
+    }
+  }
+
   const SendSever = () => {
-    //const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
-    let formData = new FormData();
-    console.log(formData );
-    const config = {
-      header: { 'content-type': 'multipart/form-data' },
-    }    
-    console.log(formData );
-    formData.append('file', recordWebcam.previewRef.current.currentSrc); // blob? blob url?
-    formData.append('userpic', props.num); // 유저가 무엇을 선택했는지 임시값
-    console.log(formData);
+    // const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
+    // let formData = new FormData();
+    // const config = {
+    //   header: { 'content-type': 'multipart/form-data' },
+    // }    
+    // //formData.append('file', recordWebcam.previewRef.current.currentSrc); // blob? blob url?
+    // formData.append('file', 1);
+    // formData.append('file2', 2);
+    // let temp = formData.get('file2');
+    // console.log(props.num);
+    // formData.append('image_no', props.num); // 유저가 무엇을 선택했는지 임시값
     // Axios.post('/api/model', formData, config).then((response) => {
     //   if (response.data.success) {
     //     console.log(response.data)

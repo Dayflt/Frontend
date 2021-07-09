@@ -39,6 +39,11 @@ const Selection =() => {
               BACK
            </button>
           </Link>
+          <Link to = {`./Test/${num}`}>  
+           <button className="RunButton">
+              test
+           </button>
+          </Link>
           <Link to = {`./Record/${num}`}>  
            <button className="RunButton">
               NEXT
