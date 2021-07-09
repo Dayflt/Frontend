@@ -59,7 +59,7 @@ const Result =() => {
           </React.Fragment>
         </div>
         <div className="button_box2">
-          <Link to ="./">  
+          <Link to ="../">  
             <button className="RetryButton" onClick={clickBack}> 
               TRY AGAIN
             </button>
