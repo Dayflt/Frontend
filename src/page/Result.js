@@ -1,5 +1,6 @@
+// eslint-disable-next-line
 import './css/Result.css';
-import React, {useState} from 'react';
+import React, {useDebugValue, useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
@@ -18,6 +19,15 @@ const Result =() => {
   const clickBack =()=>{
   }
 
+  /* useEffect (() => {
+    fetch('/api/model/{model_id}').then (response
+       => response.json().then(data =>{
+         console.log.apply(data)
+       }))
+  },[])*/
+  //const [videourl, setVideoUrl] = useState("");
+  //function 
+
   return (
     <div className="Page">
       <header className="Page-header">
@@ -27,7 +37,7 @@ const Result =() => {
         </h1>
         <div className="result_box">
           <ReactPlayer 
-            url='https://storage.googleapis.com/dayfly-bucket/testvid.mp4'
+            url='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
             className="result"
             loop="true"
             playing="true"
@@ -49,9 +59,11 @@ const Result =() => {
           </React.Fragment>
         </div>
         <div className="button_box2">
+          <Link to ="./">  
             <button className="RetryButton" onClick={clickBack}> 
               TRY AGAIN
             </button>
+            </Link>
         </div>
       </header>
     </div>
