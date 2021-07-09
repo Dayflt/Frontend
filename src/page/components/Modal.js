@@ -7,10 +7,11 @@ import "../css/modal.css";
 
 const Modal = ( props ) => {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-    const { open, close } = props;
+    const { open, close, result_video } = props;
     const [nickname, setNickname] = useState("");
     const [emoticon, setEmoticon] = useState("");
 
+  //상위 result의 url주소 받고 + form값 묶어서 다시 전달
     const message = (message, type) => {
         store.addNotification({
           message: message,
@@ -28,6 +29,7 @@ const Modal = ( props ) => {
         });
     }
     const clickSave = () => {
+      console.log({result_video});
         if(nickname===""){
             message("nickname을 작성해주세요","default")
             return false;
@@ -35,7 +37,8 @@ const Modal = ( props ) => {
         else{
             axios.post('/api/model/{model_id}', {
             username : nickname,
-            category_id: emoticon
+            category_id: emoticon,
+            mode_id : result_video
         })
         .then(response=>{
           console.log(response);
@@ -48,32 +51,6 @@ const Modal = ( props ) => {
         });
       }
     }
-    
-    /*const clickSave = async () => {
-        if (nickname==="") {
-          message("확인", "닉네임과 이모티콘을 선택해주세요", "default")
-          return false;
-        }
-        try {
-          await axios
-          .post("/save_image", {
-            author: nickname,
-            url: props.url
-          }, {
-            header: {
-              "content-type": "application/json",
-            },
-          })
-          .then(response => { 
-            // db 저장 성공
-            console.log(JSON.stringify(response.data));   
-          });
-        } catch (error) {
-          console.log(error);
-          message("ERROR", "Please check the console for an error message.", "warning")
-          seNickname("");
-        }
-      }*/
 
     return (
         // 모달이 열릴때 openModal 클래스가 생성된다.
@@ -105,3 +82,30 @@ const Modal = ( props ) => {
     )
 }
 export default Modal;
+
+    /*const clickSave = async () => {
+        if (nickname==="") {
+          message("확인", "닉네임과 이모티콘을 선택해주세요", "default")
+          return false;
+        }
+        try {
+          await axios
+          .post("/save_image", {
+            author: nickname,
+            url: props.url
+          }, {
+            header: {
+              "content-type": "application/json",
+            },
+          })
+          .then(response => { 
+            // db 저장 성공
+            console.log(JSON.stringify(response.data));   
+          });
+        } catch (error) {
+          console.log(error);
+          message("ERROR", "Please check the console for an error message.", "warning")
+          seNickname("");
+        }
+      }
+       onSubmit={this.handleSubmit} action="http://localhost:5000/result" */
