@@ -24,14 +24,14 @@ const Preview =  ({ match }) => {
             바뀌고 싶은 얼굴을 선택하세요!
           </h3>
             <div className='ImageBox'>
-              <div>  
+              <div className='InputBox'>  
                   <img className='SelectImg' src={ pic[num]} alt="select img"></img>
               </div>
-              <div className='plus-logo'>
-                <img  src={plus} alt="plus img"></img>
+              <div className='Plus-logo'>
+                <img  className='Plus-logo' src={plus} alt="plus img"></img>
               </div>
                 <div className='InputBox'> 
-                   웹캠 영상
+                  <img className='SelectImg' src={ pic[num]} alt="select img"></img>
                    <video />
                 </div>
             </div>

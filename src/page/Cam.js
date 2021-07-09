@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRecordWebcam } from 'react-record-webcam';
-import Axios from 'axios';
+//import Axios from 'axios';
 import './css/Page.css';
 
 function RecordVideo(props) {
@@ -19,18 +19,21 @@ function RecordVideo(props) {
   const SendSever = () => {
     //const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
     let formData = new FormData();
+    console.log(formData );
     const config = {
       header: { 'content-type': 'multipart/form-data' },
-    }
+    }    
+    console.log(formData );
     formData.append('file', recordWebcam.previewRef.current.currentSrc); // blob? blob url?
     formData.append('userpic', props.num); // 유저가 무엇을 선택했는지 임시값
-    Axios.post('/api/model', formData, config).then((response) => {
-      if (response.data.success) {
-        console.log(response.data)
-      } else {
-        alert('비디오 업로드를 실패했습니다.')
-      }
-    })
+    console.log(formData);
+    // Axios.post('/api/model', formData, config).then((response) => {
+    //   if (response.data.success) {
+    //     console.log(response.data)
+    //   } else {
+    //     alert('비디오 업로드를 실패했습니다.')
+    //   }
+    // })
   }
   
   return (
