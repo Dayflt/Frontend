@@ -2,7 +2,7 @@ import './css/Page.css';
 import React from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
-import plus from './img/plus.png';
+//import plus from './img/plus.png';
 
 const Selection =() => {
     return (
@@ -13,18 +13,31 @@ const Selection =() => {
                Synthesize Images
           </h1>
           <h3>
-            본인 얼굴과 닮고 싶은 사람의 얼굴을 업로드 하세요!
+            바뀌고 싶은 얼굴을 선택하세요!
           </h3>
-            <div className="InputImage">  
-                <div className='InputBox'></div>
-                <img src={plus} className="Plus-logo" alt="logo" />
-                <div className='InputBox'></div>
+            <div className='ImageBox'>
+              <div>  
+                <button className='SelectButton'> 1</button>
+                <button className='SelectButton'> 2</button>
+                <button className='SelectButton'> 3</button>
+                <button className='SelectButton'> 4</button>
+              </div>
+                <div className='InputBox'>
+                  여기에 선택에 따른 이미지가 들어감
+                </div>
             </div>
-          <Link to ="./Result">
+            <div>
+          <Link to ="./">
            <button className="RunButton">
-             바꾸기
+              BACK
            </button>
           </Link>
+          <Link to ="./Record">
+           <button className="RunButton">
+              NEXT
+           </button>
+          </Link>
+          </div>
         </header>
       </div>
     );
