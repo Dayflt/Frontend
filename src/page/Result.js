@@ -8,8 +8,9 @@ import axios from 'axios'
 import Modal from './components/Modal';
 import fileDownload from 'js-file-download';
 
-const Result =() => {
+const Result =() => {//앞에서 넘겨온 id참조
   const [modalOpen, setModalOpen ] = useState(false);
+  const [resultVideo, setResultVideo ] = useState("");
   
   const openModal = () => {
       setModalOpen(true);
@@ -17,11 +18,21 @@ const Result =() => {
   const closeModal = () => {
       setModalOpen(false);
   }
-
-  var result_video ='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
+  useEffect(
+    async function() {
+      try {
+        const response = await axios.get('/api/model/${model_id}');
+        var url = (response);
+        setResultVideo(url);
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    })
+  //var resultVideo ='thtps://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
 
   const VideoDownload = (/*response, filename*/) =>{
-      fileDownload({result_video} ,'test.mp4')
+      fileDownload({resultVideo} ,'test.mp4')
     }
 
   return (
@@ -33,7 +44,7 @@ const Result =() => {
         </h1>
         <div className="result_box">
           <ReactPlayer 
-            url={result_video}
+            url={resultVideo}
             className="result"
             loop="true"
             playing="true"
@@ -43,7 +54,7 @@ const Result =() => {
           </ReactPlayer>
         </div>
         <div className="button_box1">
-          <a href={result_video} download>
+          <a href={resultVideo} download>
             <button className="SaveButton" onClick="">
               Save Video
             </button>

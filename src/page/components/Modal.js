@@ -7,7 +7,7 @@ import "../css/modal.css";
 
 const Modal = ( props ) => {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-    const { open, close, result_video } = props;
+    const { open, close, resultVideo } = props;
     const [nickname, setNickname] = useState("");
     const [emoticon, setEmoticon] = useState("");
 
@@ -28,17 +28,17 @@ const Modal = ( props ) => {
           }
         });
     }
-    const clickSave = () => {
-      console.log({result_video});
-        if(nickname===""){
-            message("nickname을 작성해주세요","default")
-            return false;
-        }
-        else{
-            axios.post('/api/model/{model_id}', {
-            username : nickname,
-            category_id: emoticon,
-            mode_id : result_video
+  const clickSave = () => {
+    console.log({resultVideo});
+      if(nickname===""){
+          message("nickname을 작성해주세요","default")
+          return false;
+      }
+      else{
+        axios.post('/api/model/{model_id}', {
+        username : nickname,
+        category_id: emoticon,
+        mode_id : resultVideo
         })
         .then(response=>{
           console.log(response);
@@ -49,8 +49,8 @@ const Modal = ( props ) => {
           setNickname("");
           setEmoticon("");
         });
-      }
     }
+  }
 
     return (
         // 모달이 열릴때 openModal 클래스가 생성된다.
