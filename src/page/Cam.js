@@ -3,59 +3,23 @@ import { useRecordWebcam } from 'react-record-webcam';
 //import Axios from 'axios';
 import './css/Page.css';
 
-function RecordVideo(props) {
+function RecordVideo({setbb}) {
   const OPTIONS = { recordingLength: 5, fileType: 'mp4' } // 녹화 제한 시간, 확장자
   const recordWebcam = useRecordWebcam(OPTIONS);
-  
+
   const log = () => { // 로그 확인 용
     //const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
-    const blob = recordWebcam.blob;
-    console.log(recordWebcam.newblob);
+    //const blob = recordWebcam.blob; console.log(recordWebcam.newblob);
     //console.log(recordWebcam.previewRef.current.currentSrc);
+    const formData = new FormData();
+    formData.append('file', recordWebcam.newblob);
+    formData.append('image_no', 1);
+    console.log(recordWebcam.previewRef.current.currentSrc);
   };
 
   useEffect(() => {
     recordWebcam.open();
   },[])
-
-  function Selec() {
-    return(
-      <div>
-        <input type="file" name="docx" onChange={setFile.bind(this)} />
-        <input type="button" onClick={postFile} value="Upload" />
-      </div>
-    )
-    function postFile(event) {   
-      // HTTP POST  
-    }
-    function setFile(event) {
-      console.log(event.target.files);
-      const formData = new FormData();
-      formData.append('file', event.target.filesr);
-      console.log(formData.get('file'));
-    }
-  }
-
-  const SendSever = () => {
-    // const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
-    // let formData = new FormData();
-    // const config = {
-    //   header: { 'content-type': 'multipart/form-data' },
-    // }    
-    // //formData.append('file', recordWebcam.previewRef.current.currentSrc); // blob? blob url?
-    // formData.append('file', 1);
-    // formData.append('file2', 2);
-    // let temp = formData.get('file2');
-    // console.log(props.num);
-    // formData.append('image_no', props.num); // 유저가 무엇을 선택했는지 임시값
-    // Axios.post('/api/model', formData, config).then((response) => {
-    //   if (response.data.success) {
-    //     console.log(response.data)
-    //   } else {
-    //     alert('비디오 업로드를 실패했습니다.')
-    //   }
-    // })
-  }
   
   return (
     <div className='ImageBox' style={{ display: 'block'}}>
@@ -69,13 +33,13 @@ function RecordVideo(props) {
         <button onClick={recordWebcam.retake}>Retake recording</button>
         <button onClick={recordWebcam.download}>Download recording</button>
         <button onClick={recordWebcam.close}>Close camera</button>
-        <button onClick={SendSever}> send </button>
-        <button onClick={log}>log </button>
+        <button onClick={log}>하위 log </button>
       </div>
-      <video ref={recordWebcam.previewRef} autoPlay muted loop /> 
+      <video ref={recordWebcam.previewRef} autoPlay muted loop />
       {/* <p>Camera status: {recordWebcam.status}</p> */}
     </div>
   )
+
 }
 
 export default RecordVideo;
