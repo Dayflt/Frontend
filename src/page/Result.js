@@ -8,7 +8,7 @@ import axios from 'axios'
 import Modal from './components/Modal';
 import fileDownload from 'js-file-download';
 
-const Result =() => {//앞에서 넘겨온 id참조
+const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "proxy": "http://localhost:5000"
   const [modalOpen, setModalOpen ] = useState(false);
   const [resultVideo, setResultVideo ] = useState("");
   
@@ -29,7 +29,7 @@ const Result =() => {//앞에서 넘겨온 id참조
         console.error(error);
       }
     })
-  //var resultVideo ='thtps://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
+  //var resultVideo ='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
 
   const VideoDownload = (/*response, filename*/) =>{
       fileDownload({resultVideo} ,'test.mp4')
