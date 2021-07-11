@@ -5,21 +5,21 @@ import RecordVideo from './Cam';
 
 const Record = ({ match }) => {
   const {num} = match.params;
-  const [form, getb] = useState(new FormData());
+  const [blob, getb] = useState(new Blob());
 
 const log = () => { // 로그 확인 용
-    //console.log(blob);
+    console.log(blob);
   };
 
 const Data = () => {
-  //const formData = new FormData();
+    const formData = new FormData();
     console.log('이하');
     //console.log(blob);
-    form.append('file', form);
+    formData.append('file', blob);
     console.log(num);
-    form.append('image_no',num);
+    formData.append('image_no',num);
    // console.log(formData.get('file'));
-    console.log(form.get('image_no'));
+    console.log(formData.get('image_no'));
     console.log('이상');
   }
 
@@ -27,7 +27,7 @@ const Data = () => {
     <div className="Page">
       <header className="Page-header">
         <h1>영상 녹화 페이지 입니다!</h1>
-      <RecordVideo  setbb = {form} />
+      <RecordVideo  setbb = {getb} />
       <button onClick={log}>상위log </button> 
         <Link to="../Selection">
         <button className="RunButton">BACK</button>

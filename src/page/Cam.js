@@ -21,6 +21,10 @@ function RecordVideo({setbb}) {
     recordWebcam.open();
   },[])
   
+  const setblob = () => {
+    setbb(recordWebcam.newblob);
+  }
+
   return (
     <div className='ImageBox' style={{ display: 'block'}}>
       <div style={{ display: 'block' }}>
@@ -33,7 +37,7 @@ function RecordVideo({setbb}) {
         <button onClick={recordWebcam.retake}>Retake recording</button>
         <button onClick={recordWebcam.download}>Download recording</button>
         <button onClick={recordWebcam.close}>Close camera</button>
-        <button onClick={setbb(recordWebcam.newblob)}>aa</button>
+        <button onClick={setblob}>aa</button>
         <button onClick={log}>하위 log </button>
       </div>
       <video ref={recordWebcam.previewRef} autoPlay muted loop />
