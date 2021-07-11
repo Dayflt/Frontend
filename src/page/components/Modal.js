@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { store } from 'react-notifications-component';
@@ -28,6 +29,7 @@ const Modal = ( props ) => {
           }
         });
     }
+    //clickSave button -> link_Gallery.page 
   const clickSave = () => {
     console.log({resultVideo});
       if(nickname===""){
@@ -38,7 +40,7 @@ const Modal = ( props ) => {
         axios.post('/api/model/{model_id}', {
         username : nickname,
         category_id: emoticon,
-        mode_id : resultVideo
+        model_id : resultVideo
         })
         .then(response=>{
           console.log(response);

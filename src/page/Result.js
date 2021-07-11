@@ -21,7 +21,7 @@ const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "prox
   useEffect(
     async function() {
       try {
-        const response = await axios.get('/api/model/${model_id}');
+        const response = await axios.get('/api/model/${model_id}/model_result');
         var url = (response);
         setResultVideo(url);
         console.log(response);
