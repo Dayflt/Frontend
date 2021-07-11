@@ -9,8 +9,11 @@ import plus from './img/plus.png';
 import star from './img/star110.png';
 import Axios from 'axios';
 
-const Preview = ({ match }) => {
-  const { num } = match.params;
+const Preview = ({ match, location }) => {
+  console.log(location.state);
+
+  const { num } = match.params.num;
+  //const {formData} = location
 
   let [pic] = useState([one, two, thr, four]);
   let [model_id, get_id] = useState(num);
@@ -32,6 +35,12 @@ const Preview = ({ match }) => {
         alert("업로드 실패");
       }
     });
+  };
+
+  const log = () => { // 로그 확인 용
+    //console.log(formData.get('file'));
+    //console.log(formData.get('image_no'));
+    //console.log(formData.get('url'));
   };
 
   return (
@@ -58,6 +67,7 @@ const Preview = ({ match }) => {
           <Link to={`../Record/${num}`}>
             <button className="RunButton">BACK</button>
           </Link>
+          <button onClick={log}>하위 log </button>
           <Link to="../result">
             <button onClick={send} className="RunButton">
               SUBMIT

@@ -6,7 +6,6 @@ import Result from './page/Result';
 import Selection from './page/Selection';
 import Preview from './page/Preview';
 import Gallery from './page/Gallery';
-import Temp from './page/Temp';
 
 class App extends React.Component {
   render(){
@@ -18,7 +17,6 @@ class App extends React.Component {
         <Route path="/gallery" component={Gallery} />
         <Route path="/Preview/:num" component={Preview} />
         <Route path="/Record/:num" component={Record} />
-        <Route path="/Test/:num" component={Temp} />
       </BrowserRouter> 
     )
   }
