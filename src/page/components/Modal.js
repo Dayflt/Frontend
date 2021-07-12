@@ -14,44 +14,43 @@ const Modal = ( props ) => {
 
   //상위 result의 url주소 받고 + form값 묶어서 다시 전달
     const message = (message, type) => {
-        store.addNotification({
-          message: message,
-          type: type,
-          insert: "top",
-          container: "center",
-          animationIn: ["animated", "fadeIn"],
-          animationOut: ["animated", "fadeOut"],
-          dismiss: {
-            duration: 3000,
-          },
-          dismissable: {
-            Click: true
-          }
+      store.addNotification({
+        message: message,
+        type: type,
+        insert: "top",
+        container: "center",
+        animationIn: ["animated", "fadeIn"],
+        animationOut: ["animated", "fadeOut"],
+        dismiss: {
+          duration: 3000,
+        },
+        dismissable: {
+          Click: true
+        }
         });
     }
     //clickSave button -> link_Gallery.page 
-  const clickSave = () => {
+  const clickSave = async () => {
     console.log({video});
       if(nickname===""){
           message("nickname을 작성해주세요","default")
           return false;
       }
-      else{
-        axios.post('/api/model/{model_id}', {
+      try{
+        await axios.post('/api/model/{model_id}', {
         username : nickname,
         category_id: emoticon,
         model_id : video
         })
         .then(response=>{
-          console.log(response);
-        })
-        .catch(error=> {
+          console.log(JSON.stringifly(response.data));
+        });}
+        catch(error) {
           console.log(error);
           message("ERROR", "Please check the console for an error message.", "warning")
           setNickname("");
           setEmoticon("");
-        });
-      }
+        }
   }
 
     return (
