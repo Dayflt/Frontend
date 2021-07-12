@@ -27,7 +27,7 @@ const Modal = ( props) => {
         dismissable: {
           Click: true
         }
-        });
+      });
     }
   const clickSave = async () => {
     console.log(video);
@@ -38,6 +38,7 @@ const Modal = ( props) => {
       try{
         await axios
         .post('/api/model/{model_id}', {
+        //model_id : ?,
         username : nickname,
         category_id: emoticon,
         model_id : video
