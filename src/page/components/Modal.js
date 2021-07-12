@@ -31,27 +31,45 @@ const Modal = ( props ) => {
     }
     //clickSave button -> link_Gallery.page 
   const clickSave = async () => {
-    console.log({video});
+    console.log(video);
       if(nickname===""){
           message("nickname을 작성해주세요","default")
           return false;
       }
       try{
-        await axios.post('/api/model/{model_id}', {
+        await axios
+        .post('/api/model/{model_id}', {
         username : nickname,
         category_id: emoticon,
         model_id : video
+        },{
+          header: {
+            "content-type": "application/json",
+          },
         })
         .then(response=>{
           console.log(JSON.stringifly(response.data));
-        });}
-        catch(error) {
-          console.log(error);
-          message("ERROR", "Please check the console for an error message.", "warning")
-          setNickname("");
-          setEmoticon("");
-        }
+        });
+      }catch(error) {
+        console.log(error);
+        message("ERROR", "Please check the console for an error message.", "warning")
+        setNickname("");
+        setEmoticon("");
+      }
   }
+  /*function addCustomer(){
+    const url ='/api/model/{model_id}';
+    const formData = new FormData();
+    formData.append('model_name',this.userNickname)
+    formData.append('category_id',this.userEmoticon)
+    formData.append('model_id',this.video)
+    const config = {
+      Headers:{
+        'content-type':'multipart/form-data'
+      }
+    }
+    return post(url, formData,config)
+  }*/
 
     return (
         // 모달이 열릴때 openModal 클래스가 생성된다.
@@ -63,7 +81,7 @@ const Modal = ( props ) => {
                         <button className="close" onClick={close}> &times; </button>
                     </header>
                     <main>
-                        <form method="post">
+                        <form>
                             <input required type="text" name="nickname" placeholder="닉네임" onChange={(e) => setNickname(e.target.value) }/>
                             <select className="emoticon" name="emoticon" onChange={(e) => setEmoticon(e.target.value)}>
                                 <option value="1">🤣</option>
@@ -84,6 +102,12 @@ const Modal = ( props ) => {
 }
 export default Modal;
 
+
+/*
+<form onSubmit={this.handleFormSubmit}>
+  <input required type="text" name="nickname" placeholder="닉네임" value={this.state.userNickname} onChange={this.handleValueChange}/>
+  <select className="emoticon" name="emoticon" value={this.state.userEmoticon} onChange={this.handleValueChange}>
+  */
     /*const clickSave = async () => {
         if (nickname==="") {
           message("확인", "닉네임과 이모티콘을 선택해주세요", "default")

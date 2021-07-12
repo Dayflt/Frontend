@@ -10,7 +10,7 @@ import fileDownload from 'js-file-download';
 
 const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "proxy": "http://localhost:5000"
   const [modalOpen, setModalOpen ] = useState(false);
-  const [resultVideo, setResultVideo ] = useState("");
+  //const [resultVideo, setResultVideo ] = useState("");
   
   const openModal = () => {
       setModalOpen(true);
@@ -18,7 +18,7 @@ const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "prox
   const closeModal = () => {
       setModalOpen(false);
   }
-  useEffect(
+  /*useEffect(
     async function() {
       try {
         const response = await axios.get('http://localhost:5000/api/model/${model_id}/model_result');
@@ -28,8 +28,8 @@ const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "prox
       } catch (error) {
         console.error(error);
       }
-    })
-  //var resultVideo ='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
+    })*/
+  var resultVideo ='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
 
   const VideoDownload = (/*response, filename*/) =>{
       fileDownload({resultVideo} ,'test.mp4')
