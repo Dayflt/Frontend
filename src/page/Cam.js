@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useRecordWebcam } from 'react-record-webcam';
 //import Axios from 'axios';
 import './css/Page.css';
+import {storage} from "../App";
 
 function RecordVideo({setbb, setburl}) {
   const OPTIONS = { recordingLength: 5, fileType: 'mp4' } // 녹화 제한 시간, 확장자
@@ -22,6 +23,7 @@ function RecordVideo({setbb, setburl}) {
 
   
   const setblob = () => {
+
     setbb(recordWebcam.blob);
     setburl(recordWebcam.previewRef.current.src);
   }

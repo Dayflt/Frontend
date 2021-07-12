@@ -8,6 +8,7 @@ import four from './img/4.jpg';
 import plus from './img/plus.png';
 import star from './img/star110.png';
 import Axios from 'axios';
+import {storage} from '../App';
 
 const Preview = ({ match }) => {
 
