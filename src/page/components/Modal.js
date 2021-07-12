@@ -6,7 +6,7 @@ import ReactNotification from 'react-notifications-component';
 import axios from 'axios'
 import "../css/modal.css";
 
-const Modal = ( props ) => {
+const Modal = ( props) => {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close, video } = props;
     const [nickname, setNickname] = useState("");
@@ -29,7 +29,6 @@ const Modal = ( props ) => {
         }
         });
     }
-    //clickSave button -> link_Gallery.page 
   const clickSave = async () => {
     console.log(video);
       if(nickname===""){
@@ -50,6 +49,7 @@ const Modal = ( props ) => {
         .then(response=>{
           console.log(JSON.stringifly(response.data));
         });
+        window.location.href="../Gallery"
       }catch(error) {
         console.log(error);
         message("ERROR", "Please check the console for an error message.", "warning")
