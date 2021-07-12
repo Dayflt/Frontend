@@ -10,7 +10,8 @@ function RecordVideo({setbb, setburl}) {
   const log = () => { // 로그 확인 용
     //const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
     //const blob = recordWebcam.blob; console.log(recordWebcam.newblob);
-    console.log(recordWebcam.newblob);
+    console.log(recordWebcam.blob);
+    console.log(recordWebcam.previewRef.current.src);
   };
 
   useEffect(() => {
@@ -21,8 +22,8 @@ function RecordVideo({setbb, setburl}) {
 
   
   const setblob = () => {
-    setbb(recordWebcam.newblob);
-    setburl(recordWebcam.previewRef.current.currentSrc);
+    setbb(recordWebcam.blob);
+    setburl(recordWebcam.previewRef.current.src);
   }
 
   return (

@@ -15,7 +15,7 @@ class App extends React.Component {
         <Route path="/selection" component={Selection} />
         <Route path="/result" component={Result} />
         <Route path="/gallery" component={Gallery} />
-        <Route path="/Preview/:num" component={Preview} />
+        <Route path="/Preview/:formdata" component={Preview} />
         <Route path="/Record/:num" component={Record} />
       </BrowserRouter> 
     )

@@ -9,10 +9,11 @@ import plus from './img/plus.png';
 import star from './img/star110.png';
 import Axios from 'axios';
 
-const Preview = ({ match, location }) => {
-  console.log(location.state);
+const Preview = ({ match }) => {
 
-  const { num } = match.params.num;
+  const { formData } = match.params;
+  const num = 3;
+  //const { burl } = match.params.burl;
   //const {formData} = location
 
   let [pic] = useState([one, two, thr, four]);
@@ -38,7 +39,10 @@ const Preview = ({ match, location }) => {
   };
 
   const log = () => { // 로그 확인 용
-    //console.log(formData.get('file'));
+    console.log(match.params);
+    console.log(formData.get('image_no'));
+    //console.log(match.params.burl);
+    //console.log(match.params.burl);
     //console.log(formData.get('image_no'));
     //console.log(formData.get('url'));
   };
