@@ -8,7 +8,7 @@ import "../css/modal.css";
 
 const Modal = ( props ) => {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-    const { open, close, resultVideo } = props;
+    const { open, close, video } = props;
     const [nickname, setNickname] = useState("");
     const [emoticon, setEmoticon] = useState("");
 
@@ -31,7 +31,7 @@ const Modal = ( props ) => {
     }
     //clickSave button -> link_Gallery.page 
   const clickSave = () => {
-    console.log({resultVideo});
+    console.log({video});
       if(nickname===""){
           message("nickname을 작성해주세요","default")
           return false;
@@ -40,7 +40,7 @@ const Modal = ( props ) => {
         axios.post('/api/model/{model_id}', {
         username : nickname,
         category_id: emoticon,
-        model_id : resultVideo
+        model_id : video
         })
         .then(response=>{
           console.log(response);
@@ -51,7 +51,7 @@ const Modal = ( props ) => {
           setNickname("");
           setEmoticon("");
         });
-    }
+      }
   }
 
     return (
