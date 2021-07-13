@@ -23,7 +23,7 @@ const App = () => {
         <Setb.Provider value={setb}>
           <Route path="/" component={Home} exact={true}/>
           <Route path="/selection" component={Selection} />
-          <Route path="/result" component={Result} />
+          <Route path="/result/:model" component={Result} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/Preview/:num" component={Preview} />
           <Route path="/Record/:num" component={Record} />
