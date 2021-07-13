@@ -15,7 +15,8 @@ export const Setb = React.createContext(() => {});
 
 
 const App = () => {
-  const [blob, setb] = useState(123);
+  const [blob, setb] = useState();
+ // const [url, seturl] = useState();
   return (
     <BrowserRouter>
       <Bdata.Provider value={blob}>
@@ -24,7 +25,7 @@ const App = () => {
           <Route path="/selection" component={Selection} />
           <Route path="/result" component={Result} />
           <Route path="/gallery" component={Gallery} />
-          <Route path="/Preview/:formdata" component={Preview} />
+          <Route path="/Preview/:num" component={Preview} />
           <Route path="/Record/:num" component={Record} />
         </Setb.Provider>
       </Bdata.Provider>

@@ -43,9 +43,7 @@ const Record = ({ match }) => {
           <div>
             <button onClick={recordWebcam.start}>Start recording</button>
             <button onClick={recordWebcam.stop}>Stop recording</button>
-            <button onClick={recordWebcam.retake}>Retake recording</button>
-            <button onClick={recordWebcam.download}>Download recording</button>
-            <button onClick={recordWebcam.close}>Close camera</button>
+            <button onClick={recordWebcam.retake}>Retake</button>
             <button onClick={Set}>확정</button>
             <button onClick={log}>하위 log </button>
           </div>
