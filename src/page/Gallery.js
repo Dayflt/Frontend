@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import './css/Page.css';
 import React from "react";
 import { Link } from "react-router-dom";
