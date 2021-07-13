@@ -85,15 +85,13 @@ const Modal = ( props) => {
                         <button className="close" onClick={close}> &times; </button>
                     </header>
                     <main>
-                        <form>
-                            <input required type="text" name="nickname" placeholder="닉네임" onChange={(e) => setNickname(e.target.value) }/>
-                            <select className="emoticon" name="emoticon" onChange={(e) => setEmoticon(e.target.value)}>
-                                <option value="1">🤣</option>
-                                <option value="2">😚</option>
-                                <option value="3">🙃</option>
-                                <option value="4">😱</option>
-                            </select>
-                        </form>
+                      <input required type="text" name="nickname" placeholder="닉네임" onChange={(e) => setNickname(e.target.value) }/>
+                      <select className="emoticon" name="emoticon" onChange={(e) => setEmoticon(e.target.value)}>
+                        <option value="1">🤣</option>
+                        <option value="2">😚</option>
+                        <option value="3">🙃</option>
+                        <option value="4">😱</option>
+                      </select>
                     </main>
                     <ReactNotification />
                     <footer>
