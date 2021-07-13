@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import './css/Result.css';
-import React, {useDebugValue, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
@@ -13,10 +13,10 @@ const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "prox
   const [resultVideo, setResultVideo ] = useState("");
   
   const openModal = () => {
-      setModalOpen(true);
+    setModalOpen(true);
   }
   const closeModal = () => {
-      setModalOpen(false);
+    setModalOpen(false);
   }
   useEffect(
     async function() {
@@ -28,7 +28,8 @@ const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "prox
       } catch (error) {
         console.error(error);
       }
-    })
+    }
+  )
   //var resultVideo ='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
 
   const VideoDownload = (/*response, filename*/) =>{
@@ -73,27 +74,26 @@ const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "prox
             <button className="RetryButton"> 
               TRY AGAIN
             </button>
-            </Link>
+          </Link>
         </div>
       </header>
     </div>
   );
 }
+
 export default Result;
 
   //preview의 id로 호출 
-  /*
-  useEffect (() => {
+  /*useEffect (() => {
     fetch('/api/model/${model_id}').then (response
-       => response.json().then(data =>{
-         console.log.apply(data)
-       }))
+      => response.json().then(data =>{
+        console.log.apply(data)
+      }))
   },[])*/
 
   //const [videourl, setVideoUrl] = useState("");
   //function 
-  /*
-  function handleDownload (url, filename){
+  /*function handleDownload (url, filename){
     axios.get(url, {
       responseType: 'blob',
     })
@@ -103,8 +103,8 @@ export default Result;
   }
   
   router.get('주소', (req, res, next) => {
-  res.sendFile('파일경로');
-}); 
+    res.sendFile('파일경로');
+  }); 
 
   const VideoDownload = (response, filename) =>{
     axios.get(url,{
@@ -122,4 +122,5 @@ export default Result;
       fileDownload('https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4' ,'test')
     }
     let result_video ={response}
-    url={result_video}*/
+    url={result_video}
+  */
