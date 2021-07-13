@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import './css/Result.css';
-import React, {useDebugValue, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
