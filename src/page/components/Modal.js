@@ -53,9 +53,12 @@ const Modal = ( props) => {
         window.location.href="../Gallery"
       }catch(error) {
         console.log(error);
+        console.log({nickname});
+        console.log({emoticon});
         message("ERROR", "Please check the console for an error message.", "warning")
         setNickname("");
         setEmoticon("");
+        
       }
   }
   /*function addCustomer(){
