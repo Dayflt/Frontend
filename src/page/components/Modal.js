@@ -39,7 +39,7 @@ const Modal = ( props) => {
     if(nickname == ""){}
     try{
       await axios
-      .post('/api/model/{model_id}', {
+      .post('http://localhost:5000//api/model/{model_id}', {
         //model_id : ?,
         username : nickname,
         category_id: emoticon,
