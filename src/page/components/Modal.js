@@ -30,7 +30,7 @@ const Modal = ( props) => {
       });
     }
   const clickSave = async () => {
-    console.log(video);
+    console.log({video});
       if(nickname===""){
           message("nickname을 작성해주세요","default")
           return false;
