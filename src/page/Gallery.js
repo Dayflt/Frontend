@@ -8,7 +8,7 @@ import axios from 'axios'
 
 const Gallery = () => {
   //const [galleryVideo, setGalleryVideo] = useState([{video}]);
-  //const [galleryName, setGalleryName ] = useState([{name}]); 배열 형식으로 변환
+  //const [galleryName, setGalleryName ] = useState([{name}]); 배열 형식으로 axios.get
   const galleryVideo = "";
 
   return (
