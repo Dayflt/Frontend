@@ -24,8 +24,9 @@ const Record = ({ match }) => {
 
   const log = () => {
     // 로그 확인 용
+    console.log(' 아래는 지역');
     console.log(recordWebcam.newblob);
-    console.log(recordWebcam.previewRef.current.src);
+    console.log('전역');
     console.log(data);
     console.log(num);
   };
@@ -44,7 +45,6 @@ const Record = ({ match }) => {
             <button onClick={recordWebcam.start}>Start recording</button>
             <button onClick={recordWebcam.stop}>Stop recording</button>
             <button onClick={recordWebcam.retake}>Retake</button>
-            <button onClick={Set}>확정</button>
             <button onClick={log}>하위 log </button>
           </div>
           <video ref={recordWebcam.previewRef} autoPlay muted loop />
@@ -55,7 +55,7 @@ const Record = ({ match }) => {
           <button className="RunButton">BACK</button>
         </Link>
         <Link to={`../Preview/${num}`}>
-          <button className="RunButton">NEXT</button>
+          <button className="RunButton" onClick={Set}>NEXT</button>
         </Link>
       </header>
     </div>

@@ -16,19 +16,23 @@ const Preview = ({ match }) => {
   const burl = window.URL.createObjectURL(data);
 
   let [pic] = useState([one, two, thr, four]);
-  let [model_id, get_id] = useState(num);
+  //let [model_id, get_id] = useState(num);
 
   const send = () => {
     const formData = new FormData();
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
-    console.log(model_id);
+    formData.append("file", data);
     formData.append("image_no", num);
+    
+    console.log(formData.get('file'));
+    console.log(formData.get('image_no'));
+
     Axios.post("/api/model", formData, config).then((response) => {
       if (response.data.success) {
         console.log(response.data);
-        get_id(response.data.model_id);
+        //get_id(response.data.model_id);
         // 일단 받아오기
       } else {
         alert("업로드 실패");
@@ -37,11 +41,15 @@ const Preview = ({ match }) => {
   };
 
   const log = () => {
-    // 로그 확인 용
+    console.log('프리뷰(전역)');
+    console.log(data.type);
+    const tblob = new Blob([data], { type: "video/mp4" });
     console.log(data);
-    console.log(num);
-    console.log(burl);
+    console.log(tblob);
+    //console.log(num);
+    //console.log(burl);
   };
+
 
   return (
     <div className="Page">
@@ -67,6 +75,7 @@ const Preview = ({ match }) => {
             <button className="RunButton">BACK</button>
           </Link>
           <button onClick={log}>하위 log </button>
+          <button onClick={send} className="RunButton">SUBMIT test</button>
           <Link to="../result">
             <button onClick={send} className="RunButton">
               SUBMIT
