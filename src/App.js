@@ -7,31 +7,29 @@ import Selection from './page/Selection';
 import Preview from './page/Preview';
 import Gallery from './page/Gallery';
 
-export const storage = React.createContext({
-  form : new FormData(),  });
+export const Bdata = React.createContext({
+  Blob : new Blob()
+});
 
-const Select_file = () => {
-  const [fdata, setfb] = useState(new FormData());
-
-}
+export const Setb = React.createContext(() => {});
 
 
-
-class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <storage.Provider>
-          <Route path="/" component={Home} exact={true} />
+const App = () => {
+  const [blob, setb] = useState(123);
+  return (
+    <BrowserRouter>
+      <Bdata.Provider value={blob}>
+        <Setb.Provider value={setb}>
+          <Route path="/" component={Home} exact={true}/>
           <Route path="/selection" component={Selection} />
           <Route path="/result" component={Result} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/Preview/:formdata" component={Preview} />
           <Route path="/Record/:num" component={Record} />
-        </storage.Provider>
-      </BrowserRouter>
-    );
-  }
-}
+        </Setb.Provider>
+      </Bdata.Provider>
+    </BrowserRouter>
+  );
+};
 
 export default App;

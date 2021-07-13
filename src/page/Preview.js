@@ -1,5 +1,5 @@
 import './css/Page.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import one from './img/1.jpg';
 import two from './img/2.jpg';
@@ -8,21 +8,19 @@ import four from './img/4.jpg';
 import plus from './img/plus.png';
 import star from './img/star110.png';
 import Axios from 'axios';
-import {storage} from '../App';
+import { Bdata, Setb } from "../App";
 
 const Preview = ({ match }) => {
 
-  const { formData } = match.params;
-  const num = 3;
-  //const { burl } = match.params.burl;
-  //const {formData} = location
+  const Setblob = useContext(Setb);
+  const data = useContext(Bdata);
+  const { num } = match.params;
 
   let [pic] = useState([one, two, thr, four]);
   let [model_id, get_id] = useState(num);
 
   const send = () => {
     const formData = new FormData();
-    //formData.append('file', blob);
     const config = {
       header: { 'content-type': 'multipart/form-data' },
     }  
@@ -40,12 +38,8 @@ const Preview = ({ match }) => {
   };
 
   const log = () => { // 로그 확인 용
-    console.log(match.params);
-    console.log(formData.get('image_no'));
-    //console.log(match.params.burl);
-    //console.log(match.params.burl);
-    //console.log(formData.get('image_no'));
-    //console.log(formData.get('url'));
+    console.log(data);
+    console.log(num);
   };
 
   return (

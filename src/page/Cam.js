@@ -1,33 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useRecordWebcam } from 'react-record-webcam';
 //import Axios from 'axios';
 import './css/Page.css';
-import {storage} from "../App";
+import { Bdata, Setb } from '../App';
 
-function RecordVideo({setbb, setburl}) {
+const RecordVideo = () => {
   const OPTIONS = { recordingLength: 5, fileType: 'mp4' } // 녹화 제한 시간, 확장자
   const recordWebcam = useRecordWebcam(OPTIONS);
-
-  const log = () => { // 로그 확인 용
-    //const blob = recordWebcam.getRecording(); // blob 받아옴 쓸모가 있나?
-    //const blob = recordWebcam.blob; console.log(recordWebcam.newblob);
-    console.log(recordWebcam.blob);
-    console.log(recordWebcam.previewRef.current.src);
-  };
+  const Setblob = useContext(Setb);
+  const data = useContext(Bdata);
 
   useEffect(() => {
     recordWebcam.open();
-    //return () => setLoading(false); // cleanup function을 이용
   },[])
 
-
+  const log = () => { // 로그 확인 용
+    console.log(data);
+    console.log(recordWebcam.newblob);
+    console.log(recordWebcam.previewRef.current.src);
+  };
   
-  const setblob = () => {
+  const Set = () => {
+    Setblob(recordWebcam.blob);
 
-    setbb(recordWebcam.blob);
-    setburl(recordWebcam.previewRef.current.src);
+    //setbb(recordWebcam.blob);
+    //setburl(recordWebcam.previewRef.current.src);
   }
-
   return (
     <div className='ImageBox' style={{ display: 'block'}}>
       <div style={{ display: 'block' }}>
@@ -40,14 +38,12 @@ function RecordVideo({setbb, setburl}) {
         <button onClick={recordWebcam.retake}>Retake recording</button>
         <button onClick={recordWebcam.download}>Download recording</button>
         <button onClick={recordWebcam.close}>Close camera</button>
-        <button onClick={setblob}>확정</button>
+        <button onClick={Set}>확정</button>
         <button onClick={log}>하위 log </button>
       </div>
       <video ref={recordWebcam.previewRef} autoPlay muted loop />
       {/* <p>Camera status: {recordWebcam.status}</p> */}
     </div>
   )
-
 }
-
 export default RecordVideo;

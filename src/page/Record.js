@@ -1,49 +1,64 @@
-import './css/Page.css';
-import React, {useState} from "react";
+import "./css/Page.css";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import RecordVideo from './Cam';
+import { useRecordWebcam } from "react-record-webcam";
+import { Bdata, Setb } from "../App";
 
-const formData = new FormData();
+// const [blob, getb] = useState(new Blob());
+// const [burl, getburl] = useState("");
 
 const Record = ({ match }) => {
-  const {num} = match.params; 
-  const [blob, getb] = useState(new Blob());
-  const [burl, getburl] = useState('');
+  const { num } = match.params;
+  const OPTIONS = { recordingLength: 5, fileType: "mp4" }; // 녹화 제한 시간, 확장자
+  const recordWebcam = useRecordWebcam(OPTIONS);
+  const Setblob = useContext(Setb);
+  const data = useContext(Bdata);
 
-  const log = () => {
-    console.log(blob);
-    console.log(burl);
-    Data();
+  useEffect(() => {
+    recordWebcam.open();
+  }, []);
+
+  const Set = () => {
+    Setblob(recordWebcam.newblob);
   };
 
-  const Data = () => {
-    console.log('이하');
-    //console.log(blob);
-    formData.append('file', blob);
-    //console.log(num);
-    formData.append('image_no',num);
-    formData.append('burl', burl);
-    //console.log(formData.get('file'));
-    //console.log(formData.get('image_no'));
-    console.log('이상');
-  }
-
+  const log = () => {
+    // 로그 확인 용
+    console.log(recordWebcam.newblob);
+    console.log(recordWebcam.previewRef.current.src);
+    console.log(data);
+    console.log(num);
+  };
 
   return (
     <div className="Page">
       <header className="Page-header">
         <h1>영상 녹화 페이지 입니다!</h1>
 
-        <RecordVideo  setbb = {getb} setburl = {getburl}/>
+        <div className="ImageBox" style={{ display: "block" }}>
+          <div style={{ display: "block" }}>
+            <p>Camera status: {recordWebcam.status}</p>
+            <video ref={recordWebcam.webcamRef} autoPlay muted />
+          </div>
+          <div>
+            <button onClick={recordWebcam.start}>Start recording</button>
+            <button onClick={recordWebcam.stop}>Stop recording</button>
+            <button onClick={recordWebcam.retake}>Retake recording</button>
+            <button onClick={recordWebcam.download}>Download recording</button>
+            <button onClick={recordWebcam.close}>Close camera</button>
+            <button onClick={Set}>확정</button>
+            <button onClick={log}>하위 log </button>
+          </div>
+          <video ref={recordWebcam.previewRef} autoPlay muted loop />
+          {/* <p>Camera status: {recordWebcam.status}</p> */}
+        </div>
 
-      {console.log(num)}
         <Link to="../Selection">
-        <button className="RunButton">BACK</button>
-      </Link>
-      <button className="RunButton" onClick={log}>log</button>
-      <Link to={`../Preview/${formData}`}> 
-        <button className="RunButton">NEXT</button>
-      </Link>
+          <button className="RunButton">BACK</button>
+        </Link>
+        <Link to={`../Preview/${num}`}>
+          <button className="RunButton">NEXT</button>
+        </Link>
       </header>
     </div>
   );
