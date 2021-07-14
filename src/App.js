@@ -13,7 +13,6 @@ export const Bdata = React.createContext({
 
 export const Setb = React.createContext(() => {});
 
-
 const App = () => {
   const [blob, setb] = useState();
  // const [url, seturl] = useState();
