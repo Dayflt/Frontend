@@ -11,7 +11,7 @@ const Modal = ( props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
   const { open, close, model_id } = props;
   const [nickname, setNickname] = useState("");
-  const [emoticon, setEmoticon] = useState("1");
+  const [emoticon, setEmoticon] = useState("2");
 
   //상위 result의 url주소 받고 + form값 묶어서 다시 전달
   const message = (message, type) => {
@@ -74,10 +74,10 @@ const Modal = ( props) => {
           <main>
             <input required type="text" name="nickname" placeholder="닉네임" onChange={(e) => setNickname(e.target.value)}/>
             <select className="emoticon" name="emoticon" onChange={(e) => setEmoticon(e.target.value)}>
-              <option value="0">🤣</option>
-              <option selected value="1">😚</option>
-              <option value="2">🙃</option>
-              <option value="3">😱</option>
+              <option value="1">🤣</option>
+              <option selected value="2">😚</option>
+              <option value="3">🙃</option>
+              <option value="4">😱</option>
             </select>
             <ReactNotification />
           </main>
