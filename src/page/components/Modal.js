@@ -39,7 +39,7 @@ const Modal = ( props) => {
     try{
       await axios
       .patch('http://localhost:5000/api/model/${model_id}', {
-        username : nickname,
+        user_name : nickname,
         category_id: emoticon
       },{
         header: {
