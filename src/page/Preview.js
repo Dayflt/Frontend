@@ -18,7 +18,7 @@ const Preview = ({ match }) => {
   let [pic] = useState([one, two, thr, four]);
   //let [model_id, get_id] = useState(num);
 
-  let model = 0;
+  let model;
 
   const send = () => {
     const tblob = new Blob([data], { type: "video/mp4" });
@@ -73,7 +73,6 @@ const Preview = ({ match }) => {
             <button className="RunButton">BACK</button>
           </Link>
           <button onClick={log}>하위 log </button>
-          <button onClick={send} className="RunButton">SUBMIT test</button>
           <Link to={`../result/${model}`}>
             <button onClick={send} className="RunButton">
               SUBMIT
