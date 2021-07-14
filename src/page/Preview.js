@@ -8,12 +8,12 @@ import four from "./img/4.jpg";
 import plus from "./img/plus.png";
 import star from "./img/star110.png";
 import Axios from "axios";
-import { Bdata } from "../App";
+import { Bdata, Burl } from "../App";
 
 const Preview = ({ match }) => {
   const { num } = match.params;
   const data = useContext(Bdata);
-  const burl = window.URL.createObjectURL(data);
+  const burl = useContext(Burl);
 
   let [pic] = useState([one, two, thr, four]);
   //let [model_id, get_id] = useState(num);
@@ -39,7 +39,7 @@ const Preview = ({ match }) => {
         // 일단 받아오기
       } else {
         alert("업로드 실패");
-      }
+      } 
     });
   };
 

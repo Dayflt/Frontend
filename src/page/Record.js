@@ -2,7 +2,7 @@ import "./css/Page.css";
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useRecordWebcam } from "react-record-webcam";
-import { Bdata, Setb } from "../App";
+import { Bdata, Setb, Burl, Setburl} from "../App";
 
 // const [blob, getb] = useState(new Blob());
 // const [burl, getburl] = useState("");
@@ -13,6 +13,8 @@ const Record = ({ match }) => {
   const recordWebcam = useRecordWebcam(OPTIONS);
   const Setblob = useContext(Setb);
   const data = useContext(Bdata);
+  const setburl = useContext(Setburl);
+  const burl = useContext(Burl);
 
   useEffect(() => {
     recordWebcam.open();
@@ -20,15 +22,18 @@ const Record = ({ match }) => {
 
   const Set = () => {
     Setblob(recordWebcam.newblob);
+    setburl(recordWebcam.previewRef.current.currentSrc);
+    console.log(data);
   };
 
   const log = () => {
     // 로그 확인 용
+    Setblob(recordWebcam.newblob);
     console.log(' 아래는 지역');
     console.log(recordWebcam.newblob);
     console.log('전역');
     console.log(data);
-    console.log(num);
+    console.log(burl);
   };
 
   return (
@@ -46,6 +51,8 @@ const Record = ({ match }) => {
             <button onClick={recordWebcam.stop}>Stop recording</button>
             <button onClick={recordWebcam.retake}>Retake</button>
             <button onClick={log}>하위 log </button>
+            <button onClick={Set}>set </button>
+
           </div>
           <video ref={recordWebcam.previewRef} autoPlay muted loop />
           {/* <p>Camera status: {recordWebcam.status}</p> */}
@@ -55,7 +62,7 @@ const Record = ({ match }) => {
           <button className="RunButton">BACK</button>
         </Link>
         <Link to={`../Preview/${num}`}>
-          <button className="RunButton" onClick={Set}>NEXT</button>
+          <button className="RunButton" >NEXT</button>
         </Link>
       </header>
     </div>
