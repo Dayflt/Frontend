@@ -20,19 +20,20 @@ const Preview = ({ match }) => {
 
   let model = 0;
 
-  const send = () => {
-    const tblob = new Blob([data], { type: "video/mp4" });
+  const send =  async() => {
+    //const tblob = new Blob([data], { type: "video/mp4" });
     const formData = new FormData();
+    const file = new File([data], 'test.mp4', { type: 'video/mp4'})
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
-    formData.append("file", tblob);
+    formData.append("file", file);
     formData.append("image_no", num);
     
     console.log(formData.get('file'));
     console.log(formData.get('image_no'));
 
-    Axios.post("/api/model", formData, config).then((response) => {
+    await Axios.post("/api/model", formData, config).then((response) => {
       if (response.data.success) {
         console.log(response.data);
         model = response.data.model_id;
@@ -73,7 +74,6 @@ const Preview = ({ match }) => {
             <button className="RunButton">BACK</button>
           </Link>
           <button onClick={log}>하위 log </button>
-          <button onClick={send} className="RunButton">SUBMIT test</button>
           <Link to={`../result/${model}`}>
             <button onClick={send} className="RunButton">
               SUBMIT
