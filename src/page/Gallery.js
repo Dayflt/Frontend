@@ -7,9 +7,24 @@ import star from './img/star110.png';
 import axios from 'axios'
 
 const Gallery = () => {
-  //const [galleryVideo, setGalleryVideo] = useState([{video}]);
-  //const [galleryName, setGalleryName ] = useState([{name}]); 배열 형식으로 axios.get
-  const galleryVideo = "";
+  const [galleryVideo, setGalleryVideo] = useState([]);
+  const [galleryName, setGalleryName ] = useState([]);
+  //const galleryVideo = "";
+
+  useEffect(
+    async function() {
+      try {
+        const response = await axios.get('http://localhost:5000/api/model/gallery/1');
+        galleryVideo = response.data.model_result;
+        galleryName = response.data.model_name;
+        //setGalleryVideo(galleryVideo);
+        //setGalleryName(galleryName);
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  )
 
   return (
     <div className="Page">
@@ -23,7 +38,7 @@ const Gallery = () => {
             <h5>이모티콘[0]</h5>
             <div className="gallery_no">
               <ReactPlayer 
-                url={galleryVideo[0]}
+                url={galleryVideo}
                 className="gallery_video"
                 loop="true"
                 playing="true"
@@ -31,7 +46,7 @@ const Gallery = () => {
                 width="60%"
                 height="60%">
               </ReactPlayer>
-              <h6>000님</h6>
+              <h6>{galleryName}</h6>
             </div>
             <div className="gallery_no">
               <ReactPlayer 
@@ -233,7 +248,7 @@ const Gallery = () => {
         </div>
       </header>
     </div>
-  );
-};
+  )
+}
 
 export default Gallery;
