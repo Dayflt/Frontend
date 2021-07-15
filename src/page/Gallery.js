@@ -15,45 +15,39 @@ const Gallery = () => {
   useEffect(() => {
     axios.get('http://localhost:5000/api/model/gallery/1')
     .then((Response)=>{
-      const user = [];
+      const user1 = [];
       for(var i =  0; i < Response.data.length; i++){
         user.push({
           video : Response.data[i].model_result,
           username : Response.data[i].model_name
         })
       }
-      setUser(user);
+      console.log(user1[1].video);//success
+      setUser(user1);
+      
     })
+    console.log(user[1].video);//not really
+    console.log(user[1].username);
   }, [])
 
-  /*
-  useEffect(
-    async function() {
-      try {
-        for(var i = 1; i <=4; i++ ) {
-          const response = await axios.get('http://localhost:5000/api/model/gallery/'+ i);
-          galleryList.push(response.data);
-          for(var j = 1; j < galleryList.length; j++){
-            const galleryUser = response.data.model_result;
-          }
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  )*/
-  /*for(var i = 1; i <=4; i++ ) {
-          const response = axios.get('http://localhost:5000/api/model/gallery/'+ i);
-          console.log(response);
-          galleryList = response.data;
-          console.log(galleryList.length);
-            for(var j = 1; j < galleryList.length; j++){
-              const galleryVideo = response.data.model_result;
-            }
-        }*/
-/*
+  function User({user}){
+    return(
+      <div className="gallery_no">
+        <ReactPlayer 
+          url={user[1].video}
+          className="gallery_video"
+          loop="true"
+          playing="true"
+          muted="true"
+          width="70%"
+          height="70%">
+        </ReactPlayer>
+        <h6>{user[1].username}</h6>
+      </div>
+    );
+  }
+
   function Category(category){
-    
     return(
       <div className="gallery_category">
         <h5>이모티콘{category.category_no}</h5>
@@ -64,23 +58,6 @@ const Gallery = () => {
       </div>
     );
   }
-
-  function User(user){
-    return(
-      <div className="gallery_no">
-        <ReactPlayer 
-          url={galleryVideo}
-          className="gallery_video"
-          loop="true"
-          playing="true"
-          muted="true"
-          width="70%"
-          height="70%">
-        </ReactPlayer>
-        <h6>{user.model_name}</h6>
-      </div>
-    );
-  }*/
 
   return (
     /*<div className="Page">
@@ -117,6 +94,31 @@ export default Gallery;
 
 
 
+  /*
+  useEffect(
+    async function() {
+      try {
+        for(var i = 1; i <=4; i++ ) {
+          const response = await axios.get('http://localhost:5000/api/model/gallery/'+ i);
+          galleryList.push(response.data);
+          for(var j = 1; j < galleryList.length; j++){
+            const galleryUser = response.data.model_result;
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  )*/
+  /*for(var i = 1; i <=4; i++ ) {
+          const response = axios.get('http://localhost:5000/api/model/gallery/'+ i);
+          console.log(response);
+          galleryList = response.data;
+          console.log(galleryList.length);
+            for(var j = 1; j < galleryList.length; j++){
+              const galleryVideo = response.data.model_result;
+            }
+        }*/
 
 /*useEffect(
     async function() {
