@@ -34,7 +34,7 @@
 .gallery_box{
     display: inline-block;
     width: 20%;
-    height: auto;
+    height: 100%;
 }
 .gallery_box > h5{
     margin:0 0 4% 0;

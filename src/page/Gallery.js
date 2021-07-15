@@ -51,7 +51,7 @@ const Gallery = () => {
             </div>
             <div className="gallery_no2">
               <ReactPlayer 
-                url={galleryVideo[0]}
+                url={galleryVideo[1]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
@@ -59,11 +59,11 @@ const Gallery = () => {
                 width="60%"
                 height="60%">
               </ReactPlayer>
-              <h6>000님</h6>
+              <h6>{galleryName[1]}</h6>
             </div>
             <div className="gallery_no3">
               <ReactPlayer 
-                url='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
+                url={galleryVideo[2]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
@@ -71,11 +71,11 @@ const Gallery = () => {
                 width="60%"
                 height="60%">
               </ReactPlayer>
-              <h6>000님</h6>
+              <h6>{galleryName[2]}</h6>
             </div>
             <div className="gallery_no4">
               <ReactPlayer 
-                url='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
+                url={galleryVideo[3]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
@@ -83,7 +83,7 @@ const Gallery = () => {
                 width="60%"
                 height="60%">
               </ReactPlayer>
-              <h6>000님</h6>
+              <h6>{galleryName[3]}</h6>
             </div>
           </div>
           <div className="gallery_box">
