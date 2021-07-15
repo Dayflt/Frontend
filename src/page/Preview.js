@@ -7,39 +7,38 @@ import thr from "./img/3.jpg";
 import four from "./img/4.jpg";
 import plus from "./img/plus.png";
 import star from "./img/star110.png";
-import Axios from "axios";
-import { Bdata } from "../App";
+import axios from "axios";
+import { Bdata, Burl } from "../App";
 
 const Preview = ({ match }) => {
   const { num } = match.params;
   const data = useContext(Bdata);
-  const burl = window.URL.createObjectURL(data);
+  const burl = useContext(Burl);
 
   let [pic] = useState([one, two, thr, four]);
-  //let [model_id, get_id] = useState(num);
 
   let model;
 
-  const send = () => {
-    const tblob = new Blob([data], { type: "video/mp4" });
+  const send =  async() => {
     const formData = new FormData();
+    const file = new File([data], 'test.mp4', { type: 'video/mp4'})
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
-    formData.append("file", tblob);
+    formData.append("file", file);
     formData.append("image_no", num);
     
     console.log(formData.get('file'));
     console.log(formData.get('image_no'));
 
-    Axios.post("/api/model", formData, config).then((response) => {
+    await axios.post("/api/model", formData, config).then((response) => {
       if (response.data.success) {
         console.log(response.data);
         model = response.data.model_id;
         // 일단 받아오기
       } else {
         alert("업로드 실패");
-      }
+      } 
     });
   };
 
