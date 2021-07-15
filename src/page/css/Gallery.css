@@ -31,12 +31,12 @@
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
 }
-.gallery_box{
+.gallery_category{
     display: inline-grid;
     width: 20%;
     height: 100%;
 }
-.gallery_box > h5{
+.gallery_category > h5{
     margin:0 0 4% 0;
 }
 .gallery_no{

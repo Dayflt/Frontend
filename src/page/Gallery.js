@@ -23,10 +23,12 @@ const Gallery = () => {
           const response = await axios.get('http://localhost:5000/api/model/gallery/'+ i);
           console.log(response);
           const cur = response.data;
-          console.log(sur.length);
-            for(var j =0; j < cur.length; j++){
+          console.log(cur.length);
+            for(var j = 1; j < cur.length; j++){
               let video = response[j].data.model_result;
               let name = response.data.model_name;
+              setGalleryVideo1(video);
+              setGalleryName1(name);
             }
           /*if(i == 1){
             setGalleryVideo1(video);
