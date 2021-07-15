@@ -38,16 +38,16 @@ const Modal = ( props) => {
     }
     try{
       await axios
-      .patch('api/model/${model_id}', {
+      .patch('http://localhost:5000/api/model/${model_id}', {
         user_name : nickname,
-        category_id: emoticon
+        category_id: parseInt(emoticon)
       },{
         header: {
           "content-type": "application/json",
         },
       })
       .then(response=>{
-        console.log(JSON.stringifly(response.data));
+        console.log(response.data);
       });
       window.location.href="../Gallery"
     }catch(error) {

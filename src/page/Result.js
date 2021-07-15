@@ -20,7 +20,7 @@ const Result =(props) => {//앞에서 넘겨온 id참조, 프록시 5000으로  
     setModalOpen(false);
   }
   const deleteModel = () =>{
-    axios.delete('api/model/${model_id}')
+    axios.delete('http://localhost:5000/api/model/'+ model_id)
     .then(response => {
       console.log(response);
     })
@@ -31,7 +31,7 @@ const Result =(props) => {//앞에서 넘겨온 id참조, 프록시 5000으로  
   useEffect(
     async function() {
       try {
-        const response = await axios.get('api/model/${model_id}');
+        const response = await axios.get('http://localhost:5000/api/model/'+ model_id);
         var url = response.data.model_result;
         setResultVideo(url);
         console.log(response);

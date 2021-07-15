@@ -9,16 +9,17 @@ import axios from 'axios'
 const Gallery = () => {
   const [galleryVideo, setGalleryVideo] = useState([]);
   const [galleryName, setGalleryName ] = useState([]);
-  //const galleryVideo = "";
 
   useEffect(
     async function() {
       try {
         const response = await axios.get('http://localhost:5000/api/model/gallery/1');
-        galleryVideo = response.data.model_result;
-        galleryName = response.data.model_name;
-        //setGalleryVideo(galleryVideo);
-        //setGalleryName(galleryName);
+        var video = response.data.model_result;
+        var name = response.data.model_name;
+        setGalleryVideo(video);
+        setGalleryName(name);
+        console.log(video);
+        console.log(name);
         console.log(response);
       } catch (error) {
         console.error(error);
@@ -36,9 +37,9 @@ const Gallery = () => {
         <div className="gallery_total">
           <div className="gallery_box">
             <h5>이모티콘[0]</h5>
-            <div className="gallery_no">
+            <div className="gallery_no1">
               <ReactPlayer 
-                url={galleryVideo}
+                url={galleryVideo[0]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
@@ -46,9 +47,21 @@ const Gallery = () => {
                 width="60%"
                 height="60%">
               </ReactPlayer>
-              <h6>{galleryName}</h6>
+              <h6>{galleryName[0]}</h6>
             </div>
-            <div className="gallery_no">
+            <div className="gallery_no2">
+              <ReactPlayer 
+                url={galleryVideo[0]}
+                className="gallery_video"
+                loop="true"
+                playing="true"
+                muted="true"
+                width="60%"
+                height="60%">
+              </ReactPlayer>
+              <h6>000님</h6>
+            </div>
+            <div className="gallery_no3">
               <ReactPlayer 
                 url='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
                 className="gallery_video"
@@ -60,19 +73,7 @@ const Gallery = () => {
               </ReactPlayer>
               <h6>000님</h6>
             </div>
-            <div className="gallery_no">
-              <ReactPlayer 
-                url='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
-                className="gallery_video"
-                loop="true"
-                playing="true"
-                muted="true"
-                width="60%"
-                height="60%">
-              </ReactPlayer>
-              <h6>000님</h6>
-            </div>
-            <div className="gallery_no">
+            <div className="gallery_no4">
               <ReactPlayer 
                 url='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
                 className="gallery_video"
