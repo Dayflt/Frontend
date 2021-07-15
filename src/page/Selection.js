@@ -2,10 +2,10 @@ import './css/Page.css';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import star from './img/star110.png';
-import one from './img/1.jpg';
-import two from './img/2.jpg';
-import thr from './img/3.jpg';
-import four from './img/4.jpg';
+import one from './img/1.png';
+import two from './img/2.png';
+import thr from './img/3.png';
+import four from './img/4.png';
 
 const Selection =() => {
 

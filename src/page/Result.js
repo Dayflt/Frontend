@@ -28,8 +28,7 @@ const Result =({ match }) => {//앞에서 넘겨온 id참조, 프록시 5000으�
       console.log(error);
     });
   }
-  useEffect(
-    async function() {
+  useEffect(async function() {
       try {
         const response = await axios.get('http://localhost:5000/api/model/${model_id}');
         var url = response.data.model_result;
