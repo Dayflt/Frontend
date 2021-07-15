@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 import star from './img/star110.png';
 import axios from 'axios'
 import Modal from './components/Modal';
-import fileDownload from 'js-file-download';
 
-const Result =({ match }) => {//앞에서 넘겨온 id참조, 프록시 5000으로  "proxy": "http://localhost:5000"
+const Result =({ match }) => {
   const model_id = match.params.model;
   const [modalOpen, setModalOpen ] = useState(false);
   const [resultVideo, setResultVideo ] = useState("");
@@ -89,6 +88,7 @@ const Result =({ match }) => {//앞에서 넘겨온 id참조, 프록시 5000으�
 export default Result;
 
 /*
+//import fileDownload from 'js-file-download';
   const VideoDownload = (response, filename) =>{
     fileDownload({resultVideo} ,'test.mp4')
   }

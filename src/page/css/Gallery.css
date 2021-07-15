@@ -32,7 +32,7 @@
   font-size: 25px;
 }
 .gallery_box{
-    display: inline-block;
+    display: inline-grid;
     width: 20%;
     height: 100%;
 }
@@ -41,6 +41,7 @@
 }
 .gallery_no{
     text-align: center;
+    display: inline-block;
 }
 .gallery_video{
     display: inline-block;

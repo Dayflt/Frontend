@@ -8,12 +8,12 @@ import ReactNotification from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css'
 
 const Modal = ( props) => {
-  // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
+  // 열기, 닫기, model_id를 부모로부터 받아옴
   const { open, close, model_id } = props;
   const [nickname, setNickname] = useState("");
   const [emoticon, setEmoticon] = useState("2");
 
-  //상위 result의 url주소 받고 + form값 묶어서 다시 전달
+  //notification message설정
   const message = (message, type) => {
     store.addNotification({
       message: message,
@@ -30,6 +30,8 @@ const Modal = ( props) => {
       }
     });
   }
+
+  //if (nickname작성){상위 result의 model_id에 form값 묶어서 다시 전달}
   const clickSave = async () => {
     console.log({model_id});
     if(nickname===""){
@@ -58,12 +60,11 @@ const Modal = ( props) => {
       message("ERROR", "Please check the console for an error message.", "warning")
       setNickname("");
       setEmoticon("");
-      //window.location.href="../Gallery"
     }
   }
 
   return (
-    // 모달이 열릴때 openModal 클래스가 생성된다.
+    // 모달이 열릴때 openModal 클래스 생성
     <div className={ open ? 'openModal modal' : 'modal' }>
       { open ? (  
         <section>

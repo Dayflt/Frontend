@@ -37,51 +37,51 @@ const Gallery = () => {
         <div className="gallery_total">
           <div className="gallery_box">
             <h5>이모티콘[0]</h5>
-            <div className="gallery_no1">
+            <div className="gallery_no">
               <ReactPlayer 
                 url={galleryVideo[0]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>{galleryName[0]}</h6>
             </div>
-            <div className="gallery_no2">
+            <div className="gallery_no">
               <ReactPlayer 
                 url={galleryVideo[1]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>{galleryName[1]}</h6>
             </div>
-            <div className="gallery_no3">
+            <div className="gallery_no">
               <ReactPlayer 
                 url={galleryVideo[2]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>{galleryName[2]}</h6>
             </div>
-            <div className="gallery_no4">
+            <div className="gallery_no">
               <ReactPlayer 
                 url={galleryVideo[3]}
                 className="gallery_video"
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>{galleryName[3]}</h6>
             </div>
@@ -95,8 +95,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -107,8 +107,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -119,8 +119,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -131,8 +131,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -146,8 +146,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -158,8 +158,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -170,8 +170,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -182,8 +182,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -197,8 +197,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -209,8 +209,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -221,8 +221,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
@@ -233,8 +233,8 @@ const Gallery = () => {
                 loop="true"
                 playing="true"
                 muted="true"
-                width="60%"
-                height="60%">
+                width="70%"
+                height="70%">
               </ReactPlayer>
               <h6>000님</h6>
             </div>
