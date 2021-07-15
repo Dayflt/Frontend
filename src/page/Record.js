@@ -23,14 +23,11 @@ const Record = ({ match }) => {
   const Set = () => {
     Setblob(recordWebcam.newblob);
     setburl(recordWebcam.previewRef.current.currentSrc);
-    console.log(data);
   };
 
   const log = () => {
     // 로그 확인 용
-    Setblob(recordWebcam.newblob);
     console.log(' 아래는 지역');
-    console.log(recordWebcam.newblob);
     console.log('전역');
     console.log(data);
     console.log(burl);
@@ -62,7 +59,7 @@ const Record = ({ match }) => {
           <button className="RunButton">BACK</button>
         </Link>
         <Link to={`../Preview/${num}`}>
-          <button className="RunButton" >NEXT</button>
+          <button className="RunButton" onClick={Set}>NEXT</button>
         </Link>
       </header>
     </div>
