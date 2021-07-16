@@ -16,6 +16,7 @@ const Gallery = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try{
+        // setUsers(null);
         setLoading(true);
         for(var i=1; i<=4; i++){
           const response = await axios.get('http://localhost:5000/api/model/gallery/'+i);
@@ -32,8 +33,12 @@ const Gallery = () => {
     fetchUsers();
   },[]);
 
-  if (loading) return <div>갤러리 로딩중..</div>;
-  if (!user) return null;
+  if (loading) 
+    return (
+      <div className="loading_box">
+        <div className="loading">갤러리 로딩중..</div>
+      </div>)
+  if (!user1 || !user2 || !user3 || !user4) return null;
   else return (
     <div className="Page">
       <header className="Page-header">
@@ -43,7 +48,7 @@ const Gallery = () => {
         </h1>
         <div className="gallery_total">
           <div className="gallery_category" >
-            <h5>이모티콘[1]</h5>
+            <h5>🤣</h5>
             {user1.map((user , user_id) => (
               <div className="gallery_no" key={user_id}>
                 <ReactPlayer 
@@ -52,14 +57,14 @@ const Gallery = () => {
                   loop="true"
                   playing="true"
                   muted="true"
-                  width="60%"
-                  height="60%" />
+                  width="70%"
+                  height="70%" />
                 <h6>{user.model_name}</h6>
               </div>
             ))}
           </div>
           <div className="gallery_category" >
-            <h5>이모티콘[2]</h5>
+            <h5>😚</h5>
             {user2.map((user , user_id) => (
               <div className="gallery_no" key={user_id}>
                 <ReactPlayer 
@@ -68,14 +73,14 @@ const Gallery = () => {
                   loop="true"
                   playing="true"
                   muted="true"
-                  width="60%"
-                  height="60%" />
+                  width="70%"
+                  height="70%" />
                 <h6>{user.model_name}</h6>
               </div>
             ))}
           </div>
           <div className="gallery_category" >
-            <h5>이모티콘[3]</h5>
+            <h5>🙃</h5>
             {user3.map((user , user_id) => (
               <div className="gallery_no" key={user_id}>
                 <ReactPlayer 
@@ -84,14 +89,14 @@ const Gallery = () => {
                   loop="true"
                   playing="true"
                   muted="true"
-                  width="60%"
-                  height="60%" />
+                  width="70%"
+                  height="70%" />
                 <h6>{user.model_name}</h6>
               </div>
             ))}
           </div>
           <div className="gallery_category" >
-            <h5>이모티콘[4]</h5>
+            <h5>😱</h5>
             {user4.map((user , user_id) => (
               <div className="gallery_no" key={user_id}>
                 <ReactPlayer 
@@ -100,8 +105,8 @@ const Gallery = () => {
                   loop="true"
                   playing="true"
                   muted="true"
-                  width="60%"
-                  height="60%" />
+                  width="70%"
+                  height="70%" />
                 <h6>{user.model_name}</h6>
               </div>
             ))}
