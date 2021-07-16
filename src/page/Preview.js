@@ -1,10 +1,10 @@
 import "./css/Page.css";
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import one from "./img/1.jpg";
-import two from "./img/2.jpg";
-import thr from "./img/3.jpg";
-import four from "./img/4.jpg";
+import one from "./img/1.png";
+import two from "./img/2.png";
+import thr from "./img/3.png";
+import four from "./img/4.png";
 import plus from "./img/plus.png";
 import star from "./img/star110.png";
 import axios from "axios";
@@ -31,7 +31,7 @@ const Preview = ({ match }) => {
     console.log(formData.get('file'));
     console.log(formData.get('image_no'));
 
-    await axios.post("/api/model", formData, config).then((response) => {
+    await axios.post("http://localhost:5000/api/model", formData, config).then((response) => {
       if (response.data.success) {
         console.log(response.data);
         model = response.data.model_id;
