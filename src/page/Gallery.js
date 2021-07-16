@@ -8,55 +8,25 @@ import axios from 'axios'
 
 const Gallery = () => {
   const [users, setUsers] = useState(null);
+  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     const fetchUsers = async () => {
       try{
         setUsers(null);
+        setLoading(true);
         const response = await axios.get('http://localhost:5000/api/model/gallery/1');
         setUsers(response.data);
       }catch(e){
-        console.error();
+        console.error(e);
       }
+      setLoading(false);
     };
     fetchUsers();
   },[]);
 
-/*      axios.get('http://localhost:5000/api/model/gallery'+ category_no )//1
-      .then((Response)=>{
-        for(var i =  0; i < Response.data.length; i++){
-          userList.push({
-            video : Response.data[i].model_result,
-            username : Response.data[i].model_name
-          })
-        }
-        console.log(userList[1].video);//success
-        //setUser(user1);
-      })
-      //console.log(user[1].video);//not really
-      //console.log(user[1].username);
-  }, [])*/
-
-  const User = users.map((user , user_id) => (
-    <div className="gallery_no" key={user_id}>
-      <ReactPlayer 
-        url={user.video}
-        className="gallery_video"
-        loop="true"
-        playing="true"
-        muted="true"
-        width="70%"
-        height="70%" />
-      <h6>{user.username}</h6>
-    </div>
-  ));
-
-  /*const Category = category.map(({category},i)=>(
-    <div className="gallery_category" key={i}>
-      <h5>이모티콘</h5>
-      {User[{category}]}
-    </div>
-  ));*/
+  if (loading) return <div>로딩중..</div>;
+  if (!users) return null;
 
   return (
     <div className="Page">
@@ -66,7 +36,19 @@ const Gallery = () => {
              Synthesize Images
         </h1>
         <div className="gallery_total">
-          {User}
+          {users.map((user , user_id) => (
+            <div className="gallery_no" key={user_id}>
+              <ReactPlayer 
+                url={user.model_result}
+                className="gallery_video"
+                loop="true"
+                playing="true"
+                muted="true"
+                width="70%"
+                height="70%" />
+              <h6>{user.model_name}</h6>
+            </div>
+          ))}
         </div>
         <div className="button_box">
           <Link to ="../">  
@@ -83,7 +65,29 @@ const Gallery = () => {
 export default Gallery;
 
 
+/*      axios.get('http://localhost:5000/api/model/gallery'+ category_no )//1
+      .then((Response)=>{
+        for(var i =  0; i < Response.data.length; i++){
+          userList.push({
+            video : Response.data[i].model_result,
+            username : Response.data[i].model_name
+          })
+        }
+        console.log(userList[1].video);//success
+        //setUser(user1);
+      })
+      //console.log(user[1].video);//not really
+      //console.log(user[1].username);
+  }, [])*/
 
+  //const User = ;
+
+  /*const Category = category.map(({category},i)=>(
+    <div className="gallery_category" key={i}>
+      <h5>이모티콘</h5>
+      {User[{category}]}
+    </div>
+  ));*/
 
 
 
