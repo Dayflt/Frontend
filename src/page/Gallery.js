@@ -15,7 +15,7 @@ const Gallery = () => {
       try{
         setUsers(null);
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/api/model/gallery/1');
+        const response = await axios.get('http://localhost:5000/api/model/gallery/'+category_id);
         setUsers(response.data);
       }catch(e){
         console.error(e);
@@ -25,7 +25,7 @@ const Gallery = () => {
     fetchUsers();
   },[]);
 
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <div>갤러리 로딩중..</div>;
   if (!users) return null;
 
   return (
@@ -36,19 +36,70 @@ const Gallery = () => {
              Synthesize Images
         </h1>
         <div className="gallery_total">
-          {users.map((user , user_id) => (
-            <div className="gallery_no" key={user_id}>
-              <ReactPlayer 
-                url={user.model_result}
-                className="gallery_video"
-                loop="true"
-                playing="true"
-                muted="true"
-                width="70%"
-                height="70%" />
-              <h6>{user.model_name}</h6>
-            </div>
-          ))}
+          <div className="gallery_category" >
+            <h5>이모티콘[1]</h5>
+            {users.map((user , user_id) => (
+              <div className="gallery_no" key={user_id}>
+                <ReactPlayer 
+                  url={user.model_result}
+                  className="gallery_video"
+                  loop="true"
+                  playing="true"
+                  muted="true"
+                  width="70%"
+                  height="70%" />
+                <h6>{user.model_name}</h6>
+              </div>
+            ))}
+          </div>
+          <div className="gallery_category" >
+            <h5>이모티콘[2]</h5>
+            {users.map((user , user_id) => (
+              <div className="gallery_no" key={user_id}>
+                <ReactPlayer 
+                  url={user.model_result}
+                  className="gallery_video"
+                  loop="true"
+                  playing="true"
+                  muted="true"
+                  width="70%"
+                  height="70%" />
+                <h6>{user.model_name}</h6>
+              </div>
+            ))}
+          </div>
+          <div className="gallery_category" >
+            <h5>이모티콘[3]</h5>
+            {users.map((user , user_id) => (
+              <div className="gallery_no" key={user_id}>
+                <ReactPlayer 
+                  url={user.model_result}
+                  className="gallery_video"
+                  loop="true"
+                  playing="true"
+                  muted="true"
+                  width="70%"
+                  height="70%" />
+                <h6>{user.model_name}</h6>
+              </div>
+            ))}
+          </div>
+          <div className="gallery_category" >
+            <h5>이모티콘[4]</h5>
+            {users.map((user , user_id) => (
+              <div className="gallery_no" key={user_id}>
+                <ReactPlayer 
+                  url={user.model_result}
+                  className="gallery_video"
+                  loop="true"
+                  playing="true"
+                  muted="true"
+                  width="70%"
+                  height="70%" />
+                <h6>{user.model_name}</h6>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="button_box">
           <Link to ="../">  
@@ -88,10 +139,6 @@ export default Gallery;
       {User[{category}]}
     </div>
   ));*/
-
-
-
-
 
   /*
   useEffect(
