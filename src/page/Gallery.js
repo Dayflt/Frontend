@@ -7,70 +7,66 @@ import star from './img/star110.png';
 import axios from 'axios'
 
 const Gallery = () => {
-  const [user, setUser] = useState([{
-    video : "",
-    username : ""
-  }]);
-
+  const [users, setUsers] = useState(null);
+  
   useEffect(() => {
-    axios.get('http://localhost:5000/api/model/gallery/1')
-    .then((Response)=>{
-      const user1 = [];
-      for(var i =  0; i < Response.data.length; i++){
-        user.push({
-          video : Response.data[i].model_result,
-          username : Response.data[i].model_name
-        })
+    const fetchUsers = async () => {
+      try{
+        setUsers(null);
+        const response = await axios.get('http://localhost:5000/api/model/gallery/1');
+        setUsers(response.data);
+      }catch(e){
+        console.error();
       }
-      console.log(user1[1].video);//success
-      setUser(user1);
-      
-    })
-    console.log(user[1].video);//not really
-    console.log(user[1].username);
-  }, [])
+    };
+    fetchUsers();
+  },[]);
 
-  function User({user}){
-    return(
-      <div className="gallery_no">
-        <ReactPlayer 
-          url={user[1].video}
-          className="gallery_video"
-          loop="true"
-          playing="true"
-          muted="true"
-          width="70%"
-          height="70%">
-        </ReactPlayer>
-        <h6>{user[1].username}</h6>
-      </div>
-    );
-  }
+/*      axios.get('http://localhost:5000/api/model/gallery'+ category_no )//1
+      .then((Response)=>{
+        for(var i =  0; i < Response.data.length; i++){
+          userList.push({
+            video : Response.data[i].model_result,
+            username : Response.data[i].model_name
+          })
+        }
+        console.log(userList[1].video);//success
+        //setUser(user1);
+      })
+      //console.log(user[1].video);//not really
+      //console.log(user[1].username);
+  }, [])*/
 
-  function Category(category){
-    return(
-      <div className="gallery_category">
-        <h5>이모티콘{category.category_no}</h5>
-        <User user={user[1]}/>
-        <User user={user[2]}/>
-        <User user={user[3]}/>
-        <User user={user[4]}/>
-      </div>
-    );
-  }
+  const User = users.map((user , user_id) => (
+    <div className="gallery_no" key={user_id}>
+      <ReactPlayer 
+        url={user.video}
+        className="gallery_video"
+        loop="true"
+        playing="true"
+        muted="true"
+        width="70%"
+        height="70%" />
+      <h6>{user.username}</h6>
+    </div>
+  ));
+
+  /*const Category = category.map(({category},i)=>(
+    <div className="gallery_category" key={i}>
+      <h5>이모티콘</h5>
+      {User[{category}]}
+    </div>
+  ));*/
 
   return (
-    /*<div className="Page">
+    <div className="Page">
       <header className="Page-header">
         <h1>
          <img src={star} className="Star-logo" alt="logo"></img>
              Synthesize Images
         </h1>
         <div className="gallery_total">
-          <Category category={category[1]} />
-          <Category category={category[2]} />
-          <Category category={category[3]} />
-          <Category category={category[4]} />
+          {User}
         </div>
         <div className="button_box">
           <Link to ="../">  
@@ -80,8 +76,7 @@ const Gallery = () => {
           </Link>
         </div>
       </header>
-    </div>*/
-    <h2>dd</h2>
+    </div>
   )
 }
 
