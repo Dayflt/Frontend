@@ -27,8 +27,7 @@ const Result =({ match }) => {
       console.log(error);
     });
   }
-  useEffect(
-    async function() {
+  useEffect(async function() {
       try {
         const response = await axios.get('http://localhost:5000/api/model/'+ model_id);
         var url = response.data.model_result;
