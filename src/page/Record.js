@@ -2,7 +2,7 @@ import "./css/Page.css";
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecordWebcam } from "react-record-webcam";
-import { Bdata, Setb, Burl, Setburl} from "../App";
+import { Setb, Setburl} from "../App";
 
 
 const Record = ({ match }) => {
@@ -12,28 +12,27 @@ const Record = ({ match }) => {
 
   const setburl = useContext(Setburl);
   const Setblob = useContext(Setb);
-  const data = useContext(Bdata);
-  const burl = useContext(Burl);
+
+  const [preview, set_pre] = useState(recordWebcam.webcamRef);
 
   useEffect(() => {
     recordWebcam.open();
   }, []);
 
   const Set = () => {
-    Setblob(recordWebcam.newblob);
+    recordWebcam.getRecording().then((respone) => Setblob(respone));
     setburl(recordWebcam.previewRef.current.currentSrc);
-    //console.log(data);
   };
 
-  const log = () => {
-    // 로그 확인 용
-    Setblob(recordWebcam.newblob);
-    console.log(' 아래는 지역');
-    console.log(recordWebcam.newblob);
-    console.log('전역');
-    console.log(data);
-    console.log(burl);
+  const log = () => { // 로그 확인 용
+    console.log(test);
+    //console.log(burl);
   };
+
+  const stop = () => {
+    recordWebcam.stop();
+    set_pre(recordWebcam.previewRef);
+  }
 
   return (
     <div className="Page">
@@ -47,14 +46,13 @@ const Record = ({ match }) => {
           </div>
           <div>
             <button onClick={recordWebcam.start}>Start recording</button>
-            <button onClick={recordWebcam.stop}>Stop recording</button>
+            <button onClick={stop}>Stop recording</button>
             <button onClick={recordWebcam.retake}>Retake</button>
             <button onClick={log}>하위 log </button>
             <button onClick={Set}>set </button>
 
           </div>
-          <video ref={recordWebcam.previewRef} autoPlay muted loop />
-          {/* <p>Camera status: {recordWebcam.status}</p> */}
+          {/* //<video ref={recordWebcam.previewRef} autoPlay muted loop /> */}
         </div>
 
         <Link to="../Selection">
