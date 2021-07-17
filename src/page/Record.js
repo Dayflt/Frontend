@@ -13,7 +13,7 @@ const Record = ({ match }) => {
   const setburl = useContext(Setburl);
   const Setblob = useContext(Setb);
 
-  const [preview, set_pre] = useState(recordWebcam.webcamRef);
+  const [re_state, set_state] = useState(false);
 
   useEffect(() => {
     recordWebcam.open();
@@ -25,24 +25,25 @@ const Record = ({ match }) => {
   };
 
   const log = () => { // 로그 확인 용
-    console.log(test);
-    //console.log(burl);
+    set_state(true);
   };
 
   const stop = () => {
-    recordWebcam.stop();
-    set_pre(recordWebcam.previewRef);
+    recordWebcam.stop()
   }
 
   return (
     <div className="Page">
       <header className="Page-header">
         <h1>영상 녹화 페이지 입니다!</h1>
-
         <div className="ImageBox" style={{ display: "block" }}>
           <div style={{ display: "block" }}>
             <p>Camera status: {recordWebcam.status}</p>
-            <video ref={recordWebcam.webcamRef} autoPlay muted />
+            
+            {console.log('redering ' + re_state)}
+            { !re_state ? <video ref={recordWebcam.previewRef} autoPlay muted loop /> :
+            <video ref={recordWebcam.webcamRef} autoPlay muted />}
+
           </div>
           <div>
             <button onClick={recordWebcam.start}>Start recording</button>
@@ -50,8 +51,8 @@ const Record = ({ match }) => {
             <button onClick={recordWebcam.retake}>Retake</button>
             <button onClick={log}>하위 log </button>
             <button onClick={Set}>set </button>
-
           </div>
+          <video ref={recordWebcam.previewRef} autoPlay muted loop/>
           {/* //<video ref={recordWebcam.previewRef} autoPlay muted loop /> */}
         </div>
 
