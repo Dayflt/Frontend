@@ -2,16 +2,21 @@
 import './css/Result.css';
 import React, {useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // 추가
 import star from './img/star110.png';
 import axios from 'axios'
 import Modal from './components/Modal';
 
-const Result =({ match }) => {
-  const model_id = match.params.model;
+
+const Result = () => {//앞에서 넘겨온 id참조, 프록시 5000으로  "proxy": "http://localhost:5000"
+  //const model_id = match.params.model;
+
   const [modalOpen, setModalOpen ] = useState(false);
   const [resultVideo, setResultVideo ] = useState("");
   
+  const location = useLocation(); // 추가
+  const model_id = location.state.model_id; // 추가
+
   const openModal = () => {
     setModalOpen(true);
   }
@@ -41,6 +46,7 @@ const Result =({ match }) => {
   //var resultVideo ='https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4'
 
   return (
+    
     <div className="Page">
       <header className="Page-header">
         <h1>
