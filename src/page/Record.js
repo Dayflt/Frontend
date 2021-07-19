@@ -32,6 +32,10 @@ const Record = ({ match }) => {
     recordWebcam.stop()
   }
 
+  const retake = () => {
+    recordWebcam.retake();
+    set_state(false);
+  }
   return (
     <div className="Page">
       <header className="Page-header">
@@ -39,21 +43,17 @@ const Record = ({ match }) => {
         <div className="ImageBox" style={{ display: "block" }}>
           <div style={{ display: "block" }}>
             <p>Camera status: {recordWebcam.status}</p>
-            
-            {console.log('redering ' + re_state)}
-            { !re_state ? <video ref={recordWebcam.previewRef} autoPlay muted loop /> :
-            <video ref={recordWebcam.webcamRef} autoPlay muted />}
-
+            { re_state ? 
+            (<div> <video src={recordWebcam.previewRef.current.src} autoPlay muted loop/> {console.log(recordWebcam.previewRef)}</div>):
+            (<div><video ref={recordWebcam.webcamRef} autoPlay muted />{console.log('현재'+re_state)}</div>)}
           </div>
           <div>
             <button onClick={recordWebcam.start}>Start recording</button>
             <button onClick={stop}>Stop recording</button>
-            <button onClick={recordWebcam.retake}>Retake</button>
+            <button onClick={retake}>Retake</button>
             <button onClick={log}>하위 log </button>
             <button onClick={Set}>set </button>
           </div>
-          <video ref={recordWebcam.previewRef} autoPlay muted loop/>
-          {/* //<video ref={recordWebcam.previewRef} autoPlay muted loop /> */}
         </div>
 
         <Link to="../Selection">
