@@ -4,7 +4,6 @@
 ## 🔧 Directory Structure
 ```bash
 ├── Frontend/
-│   ├── Dockerfile        - 프론트앤드 도커파일
 │   ├── public/    
 │   ├── package.json & package.lock.json    
 │   └── src/ 
@@ -12,8 +11,8 @@
 │        ├── App.css
 │        ├── index.js & index.css
 │        └── page/
-│   	        ├── css /    - 컴포넌트들의 css
-│   	        ├── imgs /     - 컴포넌트들의 image
+│   	        ├── css /       - 컴포넌트들의 css
+│   	        ├── imgs /      - 컴포넌트들의 image
 │   	        ├── Gallery.js          
 │   	        ├── Home.js         
 │   	        ├── Preview.js         
