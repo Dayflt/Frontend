@@ -18,6 +18,19 @@
     $ npm start
     ```
     Checkout web service at http://localhost:3000
+    
+## 🧾 NPM-Package
+      react-router-dom
+      axios
+      react-notifications-component
+      react-player
+      react-record-webcam
+      react-spinners
+      emotion/core
+      emotion/react
+      boostrap react-bootstrap
+    
+
 ## 💡 Tech Stack
   **Frontend**
   - ![react](https://img.shields.io/badge/react-v17.0.2-9cf?logo=react) 
