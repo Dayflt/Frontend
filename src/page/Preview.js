@@ -18,6 +18,8 @@ const Preview = ({ match }) => {
   const burl = useContext(Burl);
   const history = useHistory();
 
+  const history = useHistory(); // 추가
+
   const [loadings, set_load] = useState(false);
   const [result, set_result] = useState(false);
   let [pic] = useState([one, two, thr, four]); 
@@ -51,6 +53,7 @@ const Preview = ({ match }) => {
           state: {model_id: model}
         });
       } else {
+        console.log(response.data.message);
         set_load(false);
         alert("업로드 실패");
       } 
