@@ -21,17 +21,24 @@
     
     
     
-## 🧾 NPM-Package
-      react-router-dom
-      axios
-      react-notifications-component
-      react-player
-      react-record-webcam
-      react-spinners
-      emotion/core
-      emotion/react
-      boostrap react-bootstrap
-    
+## 🧾 NPM-Packages (libraries)
+      "@emotion/core"
+      "@emotion/react"
+      "@testing-library/jest-dom"
+      "@testing-library/react"
+      "@testing-library/user-event"
+      "axios"
+      "bootstrap"
+      "react"
+      "react-bootstrap"
+      "react-dom"
+      "react-notifications-component"
+      "react-player"
+      "react-record-webcam"
+      "react-router-dom"
+      "react-scripts"
+      "react-spinners"
+      "web-vitals"
 
 
 ## 💡 Tech Stack
