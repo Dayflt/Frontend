@@ -17,25 +17,24 @@ const Record = ({ match }) => {
 
   useEffect(() => {
     recordWebcam.open();
+    set_state(false);
   }, []);
 
-  const Set = () => {
+  const Set = () => { // 녹화 영상 없이 넘어갈 경우 안넘어가게 수정 필요함.
     recordWebcam.getRecording().then((respone) => Setblob(respone));
     setburl(recordWebcam.previewRef.current.currentSrc);
   };
 
-  const log = () => { // 로그 확인 용
-    set_state(true);
-  };
-
   const stop = () => {
-    recordWebcam.stop()
+    set_state(true);
+     recordWebcam.stop();
   }
 
   const retake = () => {
-    recordWebcam.retake();
     set_state(false);
+    recordWebcam.retake();
   }
+  
   return (
     <div className="Page">
       <header className="Page-header">
@@ -43,19 +42,13 @@ const Record = ({ match }) => {
         <div className="ImageBox" style={{ display: "block" }}>
           <div style={{ display: "block" }}>
             <p>Camera status: {recordWebcam.status}</p>
-            { re_state ? 
-            (<div> <video src={recordWebcam.previewRef.current.src} autoPlay muted loop/> {console.log(recordWebcam.previewRef)}</div>):
-            (<div><video ref={recordWebcam.webcamRef} autoPlay muted />{console.log('현재'+re_state)}</div>)}
+            { re_state ? (<div> <video ref={recordWebcam.previewRef} autoPlay muted loop/></div>):
+            (<div><video ref={recordWebcam.webcamRef} autoPlay muted /></div>)}
           </div>
-          <div>
-            <button onClick={recordWebcam.start}>Start recording</button>
-            <button onClick={stop}>Stop recording</button>
-            <button onClick={retake}>Retake</button>
-            <button onClick={log}>하위 log </button>
-            <button onClick={Set}>set </button>
-          </div>
+          { re_state ? (<div><button onClick={retake}>Retake</button></div>):
+            (<div><button onClick={recordWebcam.start}>Start recording</button>
+              <button onClick={stop}>Stop recording</button></div>)}
         </div>
-
         <Link to="../Selection">
           <button className="RunButton">BACK</button>
         </Link>
