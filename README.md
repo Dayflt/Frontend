@@ -3,7 +3,6 @@
 
 ## 🔧 Directory Structure
 ```bash
-├── README.md                 - 리드미 파일
 ├── Frontend/
 │   ├── Dockerfile        - 프론트앤드 도커파일
 │   ├── public/    
