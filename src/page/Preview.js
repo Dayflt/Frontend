@@ -18,8 +18,6 @@ const Preview = ({ match }) => {
   const burl = useContext(Burl);
   const history = useHistory();
 
-  const history = useHistory(); // 추가
-
   const [loadings, set_load] = useState(false);
   const [result, set_result] = useState(false);
   let [pic] = useState([one, two, thr, four]); 
