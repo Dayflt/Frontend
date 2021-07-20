@@ -18,8 +18,18 @@
     $ npm start
     ```
     Checkout web service at http://localhost:3000
-  ## 💡 Tech Stack
-
+## 💡 Tech Stack
+  **Frontend**
+  - ![react](https://img.shields.io/badge/react-v17.0.2-9cf?logo=react) 
+  - ![Nodejs](https://img.shields.io/badge/Nodejs-v14.16.0-blue?logo=node.js)   
+  - ![Javascript](https://img.shields.io/badge/javascript-ES6+-yellow?logo=javascript) 
+  - ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) 
+  - ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple)
+  
+  **ETC**
+  - ![github](https://img.shields.io/badge/github-gray?logo=github) 
+  - ![GitKraken](https://img.shields.io/badge/GitKraken-gray?logo=GitKraken)  
+  - ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 
 ## 🔧 Directory Structure
 ```bash
