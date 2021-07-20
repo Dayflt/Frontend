@@ -5,6 +5,7 @@ import { useRecordWebcam } from "react-record-webcam";
 import { Setb, Setburl} from "../App";
 
 
+
 const Record = ({ match }) => {
   const history = useHistory();
   const num = match.params.num;
