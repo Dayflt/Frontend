@@ -2,12 +2,12 @@
 
 ## ✏️ How to use
 
-### 1. Cloning
-```
-$ git clone https://github.com/Dayflt/Frontend.git
-```
+  ### 1. Cloning
+  ```
+  $ git clone https://github.com/Dayflt/Frontend.git
+  ```
 
-### 2. Install Packages & Run ⚛️
+  ### 2. Install Packages & Run ⚛️
   - install packages
     ```
     $ cd Frontend
@@ -17,8 +17,8 @@ $ git clone https://github.com/Dayflt/Frontend.git
     ```
     $ npm start
     ```
-    
-## 💡 Tech Stack
+    Checkout web service at http://localhost:3000
+  ## 💡 Tech Stack
 
 
 ## 🔧 Directory Structure
