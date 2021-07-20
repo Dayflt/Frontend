@@ -1,17 +1,20 @@
 // eslint-disable-next-line
-import './css/Result.css';
+import './css/Home.css';
 import React, {useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import star from './img/star110.png';
 import axios from 'axios'
 import Modal from './components/Modal';
+//import fileDownload from 'js-file-download';
 
-const Result =({ match }) => {
-  const model_id = match.params.model;
+const Result =() => {//앞에서 넘겨온 id참조, 프록시 5000으로  "proxy": "http://localhost:5000"
   const [modalOpen, setModalOpen ] = useState(false);
   const [resultVideo, setResultVideo ] = useState("");
   
+  const location = useLocation(); // 추가
+  const model_id = location.state.model_id; // 추가
+
   const openModal = () => {
     setModalOpen(true);
   }
@@ -19,17 +22,18 @@ const Result =({ match }) => {
     setModalOpen(false);
   }
   const deleteModel = () =>{
-    axios.delete('http://localhost:5000/api/model/'+ model_id)
+    axios.delete('http://localhost:5000/api/model/'+model_id)
     .then(response => {
-      console.log(response);
+      console.log(response.data);
     })
     .catch(error => {
       console.log(error);
     });
   }
-  useEffect(async function() {
+  useEffect(
+    async function() {
       try {
-        const response = await axios.get('http://localhost:5000/api/model/'+ model_id);
+        const response = await axios.get('http://localhost:5000/api/model/'+model_id);
         var url = response.data.model_result;
         setResultVideo(url);
         console.log(response);
@@ -54,8 +58,8 @@ const Result =({ match }) => {
             loop="true"
             playing="true"
             muted="true"
-            width="60%"
-            height="60%">
+            width="50%"
+            height="50%">
           </ReactPlayer>
         </div>
         <div className="button_box1">
@@ -85,52 +89,3 @@ const Result =({ match }) => {
 }
 
 export default Result;
-
-/*
-//import fileDownload from 'js-file-download';
-  const VideoDownload = (response, filename) =>{
-    fileDownload({resultVideo} ,'test.mp4')
-  }
-  <button onClick={VideoDownload}>Download Image</button>
-  //preview의 id로 호출 
-  /*useEffect (() => {
-    fetch('/api/model/${model_id}').then (response
-      => response.json().then(data =>{
-        console.log.apply(data)
-      }))
-  },[])
-  */
-
-  //const [videourl, setVideoUrl] = useState("");
-  //function 
-  /*function handleDownload (url, filename){
-    axios.get(url, {
-      responseType: 'blob',
-    })
-    .then((res) => {
-      fileDownload(res.data, filename)
-    })
-  }
-  
-  router.get('주소', (req, res, next) => {
-    res.sendFile('파일경로');
-  }); 
-
-  const VideoDownload = (response, filename) =>{
-    axios.get(url,{
-    responseType: 'blob',
-  })
-    .then((response)=>{
-      fileDownload(response,filename)
-    })
-    const resut_video={response}
-  }*/
-
-  //get으로 url받아서 다운로드 할때
-  /*
-  const VideoDownload = (response, filename) =>{
-      fileDownload('https://storage.googleapis.com/dayfly-bucket/testvidmixed.mp4' ,'test')
-    }
-    let result_video ={response}
-    url={result_video}
-  */
