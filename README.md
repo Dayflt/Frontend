@@ -19,6 +19,8 @@
     ```
     Checkout web service at http://localhost:3000
     
+    
+    
 ## 🧾 NPM-Package
       react-router-dom
       axios
@@ -31,6 +33,7 @@
       boostrap react-bootstrap
     
 
+
 ## 💡 Tech Stack
   **Frontend**
   - ![react](https://img.shields.io/badge/react-v17.0.2-9cf?logo=react) 
@@ -39,7 +42,7 @@
   - ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) 
   - ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple)
   
-  **ETC**
+  **etc**
   - ![github](https://img.shields.io/badge/github-gray?logo=github) 
   - ![GitKraken](https://img.shields.io/badge/GitKraken-gray?logo=GitKraken)  
   - ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
@@ -47,22 +50,22 @@
 ## 🔧 Directory Structure
 ```bash
 ├── Frontend/
-│   ├── public/    
-│   ├── package.json & package.lock.json    
-│   └── src/ 
-│        ├── App.js & App.test.js & setupTest.js
-│        ├── App.css
-│        ├── index.js & index.css
-│        └── page/
-│   	        ├── css /       - 컴포넌트들의 css
-│   	        ├── imgs /      - 컴포넌트들의 image
-│   	        ├── Gallery.js          
-│   	        ├── Home.js         
-│   	        ├── Preview.js         
-│   	        ├── Record.js         
-│   	        ├── Result.js        
-│   	        ├── Selection.js  
-│   	        └── components/  
-│                   └── Modal.js
-
+    ├── public/    
+    ├── package.json & package.lock.json    
+    └── src/ 
+         ├── App.js & App.test.js & setupTest.js
+         ├── App.css
+         ├── index.js & index.css
+         └── page/
+   	         ├── css /       - 컴포넌트들의 css
+   	         ├── imgs /      - 컴포넌트들의 image
+   	         ├── Gallery.js          
+   	         ├── Home.js         
+   	         ├── Preview.js         
+   	         ├── Record.js         
+   	         ├── Result.js        
+   	         ├── Selection.js  
+   	         └── components/  
+                      └── Modal.js
+                   
 ```  
