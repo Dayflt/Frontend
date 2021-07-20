@@ -1,5 +1,25 @@
 # Frontend
 
+## ✏️ How to use
+
+### 1. Cloning
+```
+$ git clone https://github.com/Dayflt/Frontend.git
+```
+
+### 2. Install Packages & Run ⚛️
+  - install packages
+    ```
+    $ cd Frontend
+    $ npm install
+    ```
+  - run develop cilent
+    ```
+    $ npm start
+    ```
+    
+## 💡 Tech Stack
+
 
 ## 🔧 Directory Structure
 ```bash
