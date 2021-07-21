@@ -59,22 +59,22 @@ const Record = ({ match }) => {
                 Camera status: {recordWebcam.status}
           </Box>
           {re_state ? (
-            <Box padding={5}>
+            <Box padding={10}>
               <Button text="Retake" onClick={retake} />
             </Box>) :(
-            <Box padding={5}>
+            <Box padding={10}>
               <Flex justifyContent="center" alignItems="end" padding={2} gap={6}>
                 <Button size="sm" text="Start recording" color="red" onClick={start} />
                 <Button size="sm" text="Stop recording" onClick={stop} disabled={!record_state}/>
               </Flex>
             </Box>)}
         </div>
-        <Box paddingY={10}>
+        <Box marginBottom={10}>
           <Flex justifyContent="center" alignItems="end" gap={12}>
             <Link to="../Selection">
-              <IconButton size="lg" icon="arrow-back"/>
+              <IconButton size="lg" icon="arrow-back" accessibilityLabel="Back"/>
             </Link>
-            <IconButton size="lg" icon="arrow-forward" disabled={!re_state} onClick={set} />
+            <IconButton size="lg" icon="arrow-forward" accessibilityLabel="Next" disabled={!re_state} onClick={set} />
           </Flex >
         </Box>
       </Box>

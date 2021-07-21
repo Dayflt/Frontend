@@ -11,6 +11,7 @@ import axios from "axios";
 import { Bdata, Burl } from "../App";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { css } from "@emotion/react";
+import { IconButton, Box, Flex } from "gestalt";
 
 const Preview = ({ match }) => {
   const { num } = match.params;
@@ -61,34 +62,30 @@ const Preview = ({ match }) => {
   return (
     <div className="Page">
       <header className="Page-header">
-        <h1>
-          <img src={star} className="Star-logo" alt="logo"></img>
-          Synthesize Images
-        </h1>
-        <div className="ImageBox" style={{ margin: "3%" }}>
+        <Box margin={3}>
           {!loadings && !result ? (
-            <div>
-              <h3>선택한 것들!</h3>
-              <div className="ImageBox">
-                <div className="InputBox">
-                  <img
-                    className="SelectImg"
-                    src={pic[num]}
-                    alt="select img"
-                  ></img>
-                </div>
-                <div className="Plus-logo">
-                  <img className="Plus-logo" src={plus} alt="plus img"></img>
-                </div>
-                <div className="InputBox">
-                  <video src={burl} autoPlay muted loop />
-                </div>
-              </div>
-            </div>
+            <Flex
+              direction="colum"
+              gap={3}
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Box color="lightGray" >
+                <Box column={5} alignItems="center" display="inlineBlock">
+                  <img className="SelectImg" src={pic[num]} alt="select img" />
+                </Box>
+                <Box column={2} display="inline" justifyContent="center">
+                  <img className="Plus-logo" src={plus} alt="plus img" />
+                </Box>
+                <Box column={5} display="inlineBlock" alignItems="center">
+                  <video src={burl} autoPlay muted loop width="100%" />
+                </Box>
+              </Box>
+            </Flex>
           ) : result ? (
-            console.log('../Result/' + model)
+            console.log("../Result/" + model)
           ) : (
-            <div>
+            <Box>
               <h3>waiting...</h3>
               <PacmanLoader
                 css={override}
@@ -96,17 +93,26 @@ const Preview = ({ match }) => {
                 color={"#f2ddcc"}
                 loading={loadings}
               />
-            </div>
+            </Box>
           )}
-        </div>
-        <div>
-          <Link to={`../Record/${num}`}>
-            <button className="RunButton">BACK</button>
-          </Link>
-          <button onClick={send} className="RunButton">
-            SUBMIT
-          </button>
-        </div>
+        </Box>
+        <Box paddingY={10}>
+          <Flex justifyContent="center" alignItems="end" gap={12}>
+            <Link to={`../Record/${num}`}>
+              <IconButton
+                size="lg"
+                icon="arrow-back"
+                accessibilityLabel="BACK"
+              />
+            </Link>
+            <IconButton
+              size="lg"
+              icon="arrow-forward"
+              accessibilityLabel="SUBMIT"
+              onClick={send}
+            />
+          </Flex>
+        </Box>
       </header>
     </div>
   );
