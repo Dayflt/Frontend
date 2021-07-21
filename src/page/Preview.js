@@ -51,6 +51,7 @@ const Preview = ({ match }) => {
           state: {model_id: model}
         });
       } else {
+        console.log(response.data.message);
         set_load(false);
         alert("업로드 실패");
       } 
