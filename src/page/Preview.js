@@ -18,8 +18,6 @@ const Preview = ({ match }) => {
   const burl = useContext(Burl);
   const history = useHistory();
 
-  const history = useHistory(); // 추가
-
   const [loadings, set_load] = useState(false);
   const [result, set_result] = useState(false);
   let [pic] = useState([one, two, thr, four]); 
@@ -58,12 +56,6 @@ const Preview = ({ match }) => {
         alert("업로드 실패");
       } 
     });
-  };
-
-  const log = () => {
-    console.log('프리뷰(전역)');
-    console.log(data);
-    console.log(loadings, result);
   };
 
   return (
@@ -111,7 +103,6 @@ const Preview = ({ match }) => {
           <Link to={`../Record/${num}`}>
             <button className="RunButton">BACK</button>
           </Link>
-          <button onClick={log}>하위 log </button>
           <button onClick={send} className="RunButton">
             SUBMIT
           </button>
