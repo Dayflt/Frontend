@@ -2,8 +2,9 @@ import "./css/Page.css";
 import React, { useEffect, useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useRecordWebcam } from "react-record-webcam";
-import { Setb, Setburl} from "../App";
-
+import { Setb, Setburl } from "../App";
+import { Text, Button, IconButton, Box, Flex } from 'gestalt';
+import 'gestalt/dist/gestalt.css';
 
 
 const Record = ({ match }) => {
@@ -16,6 +17,7 @@ const Record = ({ match }) => {
   const Setblob = useContext(Setb);
 
   const [re_state, set_state] = useState(false);
+  const [record_state, set_restate] = useState(false);
 
   useEffect(() => {
     recordWebcam.open();
@@ -30,9 +32,14 @@ const Record = ({ match }) => {
     });
   };
 
+  const start = () => {
+    set_restate(true);
+    recordWebcam.start();
+  }
+
   const stop = () => {
     set_state(true);
-     recordWebcam.stop();
+    recordWebcam.stop();
   }
 
   const retake = () => {
@@ -42,23 +49,36 @@ const Record = ({ match }) => {
 
   return (
     <div className="Page">
-      <header className="Page-header">
-        <h1>영상 녹화 페이지 입니다!</h1>
+      <Box width= "60%" rounding={3} color="white">
+        <h1>영상 녹화 페이지</h1>
         <div className="ImageBox" style={{ display: "block" }}>
-          <div style={{ display: "block" }}>
-            <p>Camera status: {recordWebcam.status}</p>
-            { re_state ? (<div className="InputBox" > <video ref={recordWebcam.previewRef} autoPlay muted loop/></div>):
-            (<div className="InputBox" ><video ref={recordWebcam.webcamRef} autoPlay muted /></div>)}
-          </div>
-          { re_state ? (<div><button onClick={retake}>Retake</button></div>):
-            (<div><button onClick={recordWebcam.start}>Start recording</button>
-              <button onClick={stop}>Stop recording</button></div>)}
+
+          <Box paddingY={3} color="lightGray" alignContent="center">
+            {re_state ? (<div> <video ref={recordWebcam.previewRef} autoPlay muted loop /></div>) :
+              (<div><video ref={recordWebcam.webcamRef} autoPlay muted /></div>)}
+                Camera status: {recordWebcam.status}
+          </Box>
+
+          {re_state ? (
+            <Box padding={5}>
+              <Button text="Retake" onClick={retake} />
+            </Box>) :(
+            <Box padding={5}>
+              <Flex justifyContent="center" alignItems="end" padding={2} gap={6}>
+                <Button size="sm" text="Start recording" color="red" onClick={start} />
+                <Button size="sm" text="Stop recording" onClick={stop} disabled={!record_state}/>
+              </Flex>
+            </Box>)}
         </div>
-        <Link to="../Selection">
-          <button className="RunButton">BACK</button>
-        </Link>
-          <button className={re_state?"RunButton":"un_RunButton"}onClick={re_state? Set : null}>NEXT</button>
-      </header>
+        <Box padding={5}>
+          <Flex justifyContent="center" alignItems="end" gap={12}>
+            <Link to="../Selection">
+              <IconButton size="lg" icon="arrow-back"/>
+            </Link>
+            <IconButton size="lg" icon="arrow-forward" disabled={!re_state} />
+          </Flex >
+        </Box>
+      </Box>
     </div>
   );
 };
