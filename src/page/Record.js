@@ -3,7 +3,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useRecordWebcam } from "react-record-webcam";
 import { Setb, Setburl } from "../App";
-import { Text, Button, IconButton, Box, Flex } from 'gestalt';
+import { Button, IconButton, Box, Flex } from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 
 
@@ -24,7 +24,7 @@ const Record = ({ match }) => {
     set_state(false);
   }, []);
 
-  const Set = () => { // 녹화 영상 없이 넘어갈 경우 안넘어가게 수정 필요함.
+  const set = () => { // 녹화 영상 없이 넘어갈 경우 안넘어가게 수정 필요함.
     recordWebcam.getRecording().then((respone) => Setblob(respone));
     setburl(recordWebcam.previewRef.current.currentSrc);
     history.push({
@@ -39,6 +39,7 @@ const Record = ({ match }) => {
 
   const stop = () => {
     set_state(true);
+    set_restate(false);
     recordWebcam.stop();
   }
 
@@ -52,13 +53,11 @@ const Record = ({ match }) => {
       <Box width= "60%" rounding={3} color="white">
         <h1>영상 녹화 페이지</h1>
         <div className="ImageBox" style={{ display: "block" }}>
-
           <Box paddingY={3} color="lightGray" alignContent="center">
             {re_state ? (<div> <video ref={recordWebcam.previewRef} autoPlay muted loop /></div>) :
               (<div><video ref={recordWebcam.webcamRef} autoPlay muted /></div>)}
                 Camera status: {recordWebcam.status}
           </Box>
-
           {re_state ? (
             <Box padding={5}>
               <Button text="Retake" onClick={retake} />
@@ -70,12 +69,12 @@ const Record = ({ match }) => {
               </Flex>
             </Box>)}
         </div>
-        <Box padding={5}>
+        <Box paddingY={10}>
           <Flex justifyContent="center" alignItems="end" gap={12}>
             <Link to="../Selection">
               <IconButton size="lg" icon="arrow-back"/>
             </Link>
-            <IconButton size="lg" icon="arrow-forward" disabled={!re_state} />
+            <IconButton size="lg" icon="arrow-forward" disabled={!re_state} onClick={set} />
           </Flex >
         </Box>
       </Box>

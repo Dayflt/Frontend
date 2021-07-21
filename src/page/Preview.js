@@ -58,12 +58,6 @@ const Preview = ({ match }) => {
     });
   };
 
-  const log = () => {
-    console.log('프리뷰(전역)');
-    console.log(data);
-    console.log(loadings, result);
-  };
-
   return (
     <div className="Page">
       <header className="Page-header">
@@ -109,7 +103,6 @@ const Preview = ({ match }) => {
           <Link to={`../Record/${num}`}>
             <button className="RunButton">BACK</button>
           </Link>
-          <button onClick={log}>하위 log </button>
           <button onClick={send} className="RunButton">
             SUBMIT
           </button>
