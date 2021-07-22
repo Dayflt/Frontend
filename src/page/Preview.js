@@ -11,6 +11,7 @@ import api from '../api.jsx';
 import { Bdata, Burl } from "../App";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { css } from "@emotion/react";
+import './css/Home2.css';
 
 const Preview = ({ match }) => {
   const { num } = match.params;
@@ -58,15 +59,9 @@ const Preview = ({ match }) => {
     });
   };
 
-  const log = () => {
-    console.log('프리뷰(전역)');
-    console.log(data);
-    console.log(loadings, result);
-  };
-
   return (
-    <div className="Page">
-      <header className="Page-header">
+    <div class="masthead">
+      <div class="container p-3 mb-2 bg-white text-dark">
         <h1>
           <img src={star} className="Star-logo" alt="logo"></img>
           Synthesize Images
@@ -107,14 +102,21 @@ const Preview = ({ match }) => {
         </div>
         <div>
           <Link to={`../Record/${num}`}>
-            <button className="RunButton">BACK</button>
+          <button type="button" class="btn btn-primary m-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
+              </svg>
+              BACK
+            </button>
           </Link>
-          <button onClick={log}>하위 log </button>
-          <button onClick={send} className="RunButton">
-            SUBMIT
-          </button>
+          <button type="button" class="btn btn-primary m-3" onClick={send}>
+              NEXT
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
+              </svg>
+            </button>
         </div>
-      </header>
+      </div>
     </div>
   );
 };
