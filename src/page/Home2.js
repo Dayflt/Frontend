@@ -13,12 +13,12 @@ const Home2 =() => {
             <div class="masthead-heading text-uppercase">Welcome To Weird Museum</div>
             <div className="button_box">
               <Link to ="./Selection">
-                <button className="StartButton" type="button" class="btn btn-light disabled btn-lg">
+                <button className="StartButton" type="button" class="btn btn-light btn-lg">
                   START!
                 </button>
               </Link>
               <Link to ="./Gallery">
-                <button className="GalleryButton" type="button" class="btn btn-light disabled btn-lg">
+                <button className="GalleryButton" type="button" class="btn btn-light btn-lg">
                   Gallery
                 </button>
               </Link>

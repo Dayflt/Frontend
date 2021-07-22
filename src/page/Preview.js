@@ -61,7 +61,7 @@ const Preview = ({ match }) => {
 
   return (
     <div class="masthead">
-      <div class="container p-3 mb-2 bg-white text-dark">
+      <div class="container-lg p-3 mb-2 bg-white text-dark">
         <h1>
           <img src={star} className="Star-logo" alt="logo"></img>
           Synthesize Images
@@ -70,19 +70,19 @@ const Preview = ({ match }) => {
           {!loadings && !result ? (
             <div>
               <h3>선택한 것들!</h3>
-              <div className="ImageBox">
-                <div className="InputBox">
+              <div class="container row justify-content-center" >
+                <div class="col-sm-5 row">
                   <img
-                    className="SelectImg"
+                    class="img-fluid"
                     src={pic[num]}
                     alt="select img"
                   ></img>
                 </div>
-                <div className="Plus-logo">
-                  <img className="Plus-logo" src={plus} alt="plus img"></img>
+                <div class="col-sm-1 h-20 center-block row">
+                  <img src={plus} alt="plus img"></img>
                 </div>
-                <div className="InputBox">
-                  <video src={burl} autoPlay muted loop />
+                <div class="col-sm-5 row">
+                  <video  class="img-fluid" src={burl} autoPlay muted loop />
                 </div>
               </div>
             </div>

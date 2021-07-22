@@ -15,7 +15,7 @@ const Selection = () => {
 
   return (
     <div class="masthead">
-      <div class="container p-3 mb-2 bg-white text-dark">
+      <div class="container p-3 mb-2 bg-white text-dark vh-80">
         <h1>
           <img src={star} className="Star-logo" alt="logo"></img>
           Synthesize Images
