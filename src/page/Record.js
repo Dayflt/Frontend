@@ -3,7 +3,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useRecordWebcam } from "react-record-webcam";
 import { Setb, Setburl } from "../App";
-import './css/Home2.css';
+import "./css/Home2.css";
 
 const Record = ({ match }) => {
   const history = useHistory();
@@ -48,21 +48,23 @@ const Record = ({ match }) => {
 
   return (
     <div class="masthead height: 100%">
-      <div class="container-lg p-3 mb-2 bg-white text-dark vh-80">
-        <h1>영상 녹화 페이지 입니다!</h1>
+      <div class="container-lg p-3 mb-2 vh-80">
+        <h1>Record Your Face!</h1>
         <div class="container d-block">
           <div style={{ display: "block" }}>
             {re_state ? (
-              <div class="mt-4">
-                {" "}
-                <video
-                  ref={recordWebcam.previewRef}
-                  height="480px"
-                  width="680px"
-                  autoPlay
-                  muted
-                  loop
-                />
+              <div class="container p-3 mb-2 vh-80">
+                <div class="pt-4">
+                  {" "}
+                  <video
+                    ref={recordWebcam.previewRef}
+                    height="480px"
+                    width="680px"
+                    autoPlay
+                    muted
+                    loop
+                  />
+                </div>
               </div>
             ) : (
               <div class="mt-4">

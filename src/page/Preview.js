@@ -1,10 +1,10 @@
 import "./css/Page.css";
 import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
-import one from "./img/1.png";
-import two from "./img/2.png";
-import thr from "./img/3.png";
-import four from "./img/4.png";
+import one from "./img/11.png";
+import two from "./img/22.png";
+import thr from "./img/33.png";
+import four from "./img/44.png";
 import plus from "./img/plus.png";
 import star from "./img/star110.png";
 import api from '../api.jsx';
@@ -61,15 +61,13 @@ const Preview = ({ match }) => {
 
   return (
     <div class="masthead">
-      <div class="container-lg p-3 mb-2 bg-white text-dark">
+      <div class="container-lg p-3 mb-2 ">
         <h1>
-          <img src={star} className="Star-logo" alt="logo"></img>
-          Synthesize Images
+          Your Choice! Keep Going?
         </h1>
         <div className="ImageBox" style={{ margin: "3%" }}>
           {!loadings && !result ? (
             <div>
-              <h3>선택한 것들!</h3>
               <div class="container row justify-content-center" >
                 <div class="col-sm-5 row">
                   <img
@@ -90,7 +88,7 @@ const Preview = ({ match }) => {
             console.log('../Result/' + model)
           ) : (
             <div>
-              <h3>waiting...</h3>
+              <h3>Loading ...</h3>
               <PacmanLoader
                 css={override}
                 size={50}

@@ -1,11 +1,10 @@
 import './css/Page.css';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import star from './img/star110.png';
-import one from './img/1.png';
-import two from './img/2.png';
-import thr from './img/3.png';
-import four from './img/4.png';
+import one from './img/11.png';
+import two from './img/22.png';
+import thr from './img/33.png';
+import four from './img/44.png';
 import './css/Home2.css';
 
 const Selection = () => {
@@ -15,17 +14,13 @@ const Selection = () => {
 
   return (
     <div class="masthead">
-      <div class="container p-3 mb-2 bg-white text-dark vh-80">
+      <div class="container-lg p-3 mb-2">
         <h1>
-          <img src={star} className="Star-logo" alt="logo"></img>
-          Synthesize Images
+          Choose your face!
         </h1>
-        <h3>
-          바뀌고 싶은 얼굴을 선택하세요!
-        </h3>
         <div class="container mt-5">
-          <div >
-            <img className='SelectImg' class="img-thumbnail" src={pic[num]} alt="select img"/>
+          <div class="hv-60">
+            <img  src={pic[num]} alt="select img"/>
           </div>
           <div class="m-3">
             <button type="button" class="btn btn-primary m-3" onClick={() => { m_num(0) }}> 1</button>
