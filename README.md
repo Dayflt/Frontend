@@ -22,23 +22,23 @@
     
     
 ## 🧾 NPM-Packages (libraries)
-      "@emotion/core"
-      "@emotion/react"
-      "@testing-library/jest-dom"
-      "@testing-library/react"
-      "@testing-library/user-event"
-      "axios"
-      "bootstrap"
-      "react"
-      "react-bootstrap"
-      "react-dom"
-      "react-notifications-component"
-      "react-player"
-      "react-record-webcam"
-      "react-router-dom"
-      "react-scripts"
-      "react-spinners"
-      "web-vitals"
+    "@emotion/core"
+    "@emotion/react"
+    "@testing-library/jest-dom"
+    "@testing-library/react"
+    "@testing-library/user-event"
+    "axios"
+    "bootstrap"
+    "bootstrap-icons"
+    "bootswatch"
+    "react"
+    "react-dom"
+    "react-notifications-component"
+    "react-record-webcam"
+    "react-router-dom"
+    "react-scripts"
+    "react-spinners"
+    "web-vitals"
 
 
 ## 💡 Tech Stack
@@ -58,11 +58,13 @@
 ```bash
 ├── Frontend/
     ├── public/    
-    ├── package.json & package.lock.json    
+    ├── package.json & package.lock.json 
+    ├── node_modules
     └── src/ 
-         ├── App.js & App.test.js & setupTest.js
-         ├── App.css
          ├── index.js & index.css
+         ├── App.js & App.css
+         ├── App.test.js & setupTest.js & reportWebVitals.js
+         ├── api.jsx             
          └── page/
    	         ├── css /       - 컴포넌트들의 css
    	         ├── imgs /      - 컴포넌트들의 image
