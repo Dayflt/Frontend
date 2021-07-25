@@ -65,7 +65,7 @@
          ├── App.js & App.css
          ├── App.test.js & setupTest.js 
          ├── reportWebVitals.js
-         ├── api.jsx             
+         ├── api.jsx                              - baseurl 설정
          └── page/
    	         ├── css /                        - 컴포넌트들의 css
    	         ├── imgs /                       - 컴포넌트들의 image
