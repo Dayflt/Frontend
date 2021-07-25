@@ -63,11 +63,12 @@
     └── src/ 
          ├── index.js & index.css
          ├── App.js & App.css
-         ├── App.test.js & setupTest.js & reportWebVitals.js
+         ├── App.test.js & setupTest.js 
+         ├── reportWebVitals.js
          ├── api.jsx             
          └── page/
-   	         ├── css /       - 컴포넌트들의 css
-   	         ├── imgs /      - 컴포넌트들의 image
+   	         ├── css /                        - 컴포넌트들의 css
+   	         ├── imgs /                       - 컴포넌트들의 image
    	         ├── Gallery.js          
    	         ├── Home.js         
    	         ├── Preview.js         
