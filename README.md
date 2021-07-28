@@ -64,7 +64,7 @@
     ├── node_modules
     └── src/ 
          ├── index.js & index.css                 - React 프로젝트 파일
-         ├── App.js & App.css                     - page component 관리 파일 
+         ├── App.js & App.css                     - page component들 관리 파일 
          ├── App.test.js & setupTest.js
          ├── reportWebVitals.js
          ├── api.jsx                              - baseURL 설정
