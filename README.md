@@ -59,7 +59,7 @@
 ├── Frontend/
     ├── public/                                   - Static 파일들 저장된 폴더
     │    ├── index.html                           - React 프로젝트가 표시될 파일
-    │    └── logo.ico                              - favicon
+    │    └── logo.ico                             - favicon
     ├── package.json & package.lock.json          - 라이브러리를 관리하는 파일 
     ├── node_modules
     └── src/ 
@@ -78,6 +78,6 @@
    	         ├── Result.js                    - 결과물 페이지
    	         ├── Selection.js                 - 사진 선택 페이지
    	         └── components/  
-                      └── Modal.js            - 결과물의 정보 입력 팝업창
+                      └── Modal.js                 - 결과물의 정보 입력 팝업창
                    
 ```  
