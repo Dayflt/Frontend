@@ -6,7 +6,6 @@ import two from "./img/2.png";
 import thr from "./img/3.png";
 import four from "./img/4.png";
 import plus from "./img/plus.png";
-import star from "./img/star110.png";
 import api from '../api.jsx';
 import { Bdata, Burl } from "../App";
 import PacmanLoader from "react-spinners/PacmanLoader";
@@ -25,13 +24,15 @@ const Preview = ({ match }) => {
 
   const override = css`
     display: block;
-    margin: 0 auto;
+    margin: auto;
     border-color: #ffffff;
+    display:flex;
+    right : 2vh;
   `;
 
   const send = async() => {
     const formData = new FormData();
-    const file = new File([data], 'test.mp4', { type: 'video/mp4'})
+    const file = new File([data], String(Math.floor(Math.random()*10000))+'test.mp4', { type: 'video/mp4'})
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
@@ -58,47 +59,39 @@ const Preview = ({ match }) => {
     });
   };
 
-  const log = () => {
-    console.log('프리뷰(전역)');
-    console.log(data);
-    console.log(loadings, result);
-  };
-
   return (
-    <div className="Page">
-      <header className="Page-header">
-        <h1>
-          <img src={star} className="Star-logo" alt="logo"></img>
-          Synthesize Images
-        </h1>
-        <div className="ImageBox" style={{ margin: "3%" }}>
+    <div class="masthead">
+      <div class="container-lg p-3 mb-2 ">
+        <div className="barbox">
+          <ul id="progressbar">
+            <li id="selection" class="active"><strong>SELECTION</strong></li>
+            <li id="webcam" class="active"><strong>WEBCAM</strong></li>
+            <li id="preview" class="active"><strong>PREVIEW</strong></li>
+            <li id="result"><strong>RESULT</strong></li>
+          </ul>
+        </div>
+        <h1 class="title">Your Choice! Keep Going?</h1>
+        <div style={{ margin: "5%" }}>
           {!loadings && !result ? (
-            <div>
-              <h3>선택한 것들!</h3>
-              <div className="ImageBox">
-                <div className="InputBox">
-                  <img
-                    className="SelectImg"
-                    src={pic[num]}
-                    alt="select img"
-                  ></img>
-                </div>
-                <div className="Plus-logo">
-                  <img className="Plus-logo" src={plus} alt="plus img"></img>
-                </div>
-                <div className="InputBox">
-                  <video src={burl} autoPlay muted loop />
-                </div>
+            <div class="container_preview row row_2 justify-content-center">
+              <div class="col-sm-5 row">
+                <img class="img-fluid" src={pic[num]} alt="select img"></img>
+              </div>
+              <div class="col-sm-1 h-20 center-block row justify-content-center">
+                <img class="img_plus py-4" src={plus} alt="plus img"></img>
+              </div>
+              <div class="col-sm-5 row">
+                <video class="img-fluid previewcam" src={burl} autoPlay muted loop />
               </div>
             </div>
           ) : result ? (
-            console.log('../Result/' + model)
+            console.log("../Result/" + model)
           ) : (
-            <div>
-              <h3>waiting...</h3>
-              <PacmanLoader
+            <div className="pacman">
+              <h3 className="refacing">Refacing ...</h3>
+              <PacmanLoader 
                 css={override}
-                size={50}
+                size={45}
                 color={"#f2ddcc"}
                 loading={loadings}
               />
@@ -107,14 +100,17 @@ const Preview = ({ match }) => {
         </div>
         <div>
           <Link to={`../Record/${num}`}>
-            <button className="RunButton">BACK</button>
+            <button type="button" class="btn btn-primary btn-bnn">
+              <i class="bi-caret-left" />
+              BACK
+            </button>
           </Link>
-          <button onClick={log}>하위 log </button>
-          <button onClick={send} className="RunButton">
-            SUBMIT
-          </button>
+          <button type="button" class="btn btn-primary btn-bnn" onClick={send}>
+          NEXT
+          <i class="bi-caret-right"/>
+        </button>
         </div>
-      </header>
+      </div>
     </div>
   );
 };
