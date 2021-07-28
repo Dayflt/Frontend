@@ -57,25 +57,27 @@
 ## 🔧 Directory Structure
 ```bash
 ├── Frontend/
-    ├── public/    
-    ├── package.json & package.lock.json 
+    ├── public/                                   - Static 파일들 저장된 폴더
+    │    ├── index.html                           - React 프로젝트가 표시될 파일
+    │    └── logo.ico                              - favicon
+    ├── package.json & package.lock.json          - 라이브러리를 관리하는 파일 
     ├── node_modules
     └── src/ 
          ├── index.js & index.css
          ├── App.js & App.css
-         ├── App.test.js & setupTest.js 
+         ├── App.test.js & setupTest.js
          ├── reportWebVitals.js
          ├── api.jsx                              - baseURL 설정
          └── page/
    	         ├── css /                        - 컴포넌트들의 css
    	         ├── imgs /                       - 컴포넌트들의 image
-   	         ├── Gallery.js          
-   	         ├── Home.js         
-   	         ├── Preview.js         
-   	         ├── Record.js         
-   	         ├── Result.js        
-   	         ├── Selection.js  
+   	         ├── Gallery.js                   - 갤러리 페이지
+   	         ├── Home.js                      - 메인 페이지
+   	         ├── Preview.js                   - preview 페이지
+   	         ├── Record.js                    - 웹캠 페이지
+   	         ├── Result.js                    - 결과물 페이지
+   	         ├── Selection.js                 - 사진 선택 페이지
    	         └── components/  
-                      └── Modal.js
+                      └── Modal.js            - 결과물의 정보 입력 팝업창
                    
 ```  
