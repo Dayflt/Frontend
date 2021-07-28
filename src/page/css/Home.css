@@ -1,191 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.Page {
-  background-color: #f2ddcc;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: cal(10px + 2vmin);
-  color: black;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #5f5958;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.Star-logo {
-  height: 5vmin;
-  pointer-events: none;
-  vertical-align: middle;
+.masthead_home {
+  padding-top: 10rem;
+  padding-bottom: 30rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../img/bg.jpg");  
+  position: relative;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-size: cover;
+}
+.masthead_home .masthead-createheading {
+  position: relative;
+  top: -60px;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1rem;
+  margin-bottom: 2rem;
 }
 
-.Page-header {
-  width: 80%;
-  border-radius: 10px;
-  border: solid 1.5px #f6f7fa;
-  margin: 20px;
-  padding-bottom: 10px;
-  background-color: white;
-  margin-bottom: 10px;
-  font-family: 'Roboto', sans-serif;
-}
-.Page-header h1 {
-  font-size: 200%;
-  padding: 4% 0 0 0;
-  margin: 2% 0 2% 0 ;
-}
-.Page-header h3 {
-  font-size: 100%;
-  padding: 0;
-  margin: 0 0 2% 0 ;
-}
-.step_box{
-  background-color: #c4c4c4;
-  display: inline-block;
-  padding: 5px;
-  width: 80%;
-}
-.step{
-  display: inline-block;
-  padding: 0 20px 0 20px;
-  font-size: 100%;
-}
-.step h5 {
-  padding: 0;
-  margin: 15% 0 15% 0 ;
-}
-.video_box{
-    clear: both;
-}
-.video_box video{
-    width: 15vmin;
-    height: 15vmin;
-    margin: 3%;
-    border-radius: 10%;
-}
-.result_box{
-  text-align: center;
-}
-.result{
-  display: inline-block;
-}
-.button_box{
-    clear: both;
-}
-.StartButton {
-  background-color: #c4c4c4;
-  text-align: center;
-  color: black;
-  border-radius: 15px;
-  font-size: 250%;
-  font-family: 'Jua', sans-serif;
-  margin: 2%;
-  padding: 3% 6% 3% 6%;
-}
-.GalleryButton {
-  text-align: center;
-  background-color: #c4c4c4;
-  border-radius: 10px;
-  font-size: 120%;
-  padding: 2%;
-  margin: 2%;
-  vertical-align: middle;
-  font-family: 'Jua', sans-serif;
-}
-.SaveButton {
-  text-align: center;
-  background-color: #c4c4c4;
-  border-radius: 30px;
-  font-size: 30px;
-  margin: 15px 10% 0 0 ;
-  padding: 1% 2% 1% 2% ;
-  vertical-align: middle;
-  font-family: 'Jua', sans-serif;
-}
-.ShareButton {
-  text-align: center;
-  background-color: #c4c4c4;
-  border-radius: 30px;
-  font-size: 30px;
-  margin: 15px 0 0 10% ;
-  padding: 1% 2% 1% 2% ;
-  vertical-align: middle;
-  font-family: 'Jua', sans-serif;
-}
-.RetryButton {
-  background-color: #c4c4c4;
-  text-align: center;
-  color: black;
-  border-radius: 15px;
-  font-size: 150%;
-  margin: 3%;
-  padding: 3% 6% 3% 6%;
-  font-family: 'Jua', sans-serif;
+.masthead_home .masthead-subheading {
+  position:relative;
+  top: -70px;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 2.25rem;
+  /*margin-bottom: 2rem;*/
 }
 
-@media all and (max-width:1200px){
-  .step{
-    display: inline-block;
-    padding: 0 20px 0 20px
-  }
+
+.masthead_home .masthead-heading {
+  position: relative;
+  top: -40px;
+  font-size: 3.0rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-@media all and (max-width:960px){
-  .step{
-    display: inline-block;
-    padding: 0 20px 0 20px;
-  }
+.btn-lg{
+  position: relative;
+  top: -50px;
+  background-color:#212529;
+  margin: 4% 2% 0 0 ;
+  color:ghostwhite;
+  padding: 2% 3% 2% 3%;
+  font-size: 3.0rem;
+  line-height: 1.3333333;
+  border-radius: 6px;
 }
-@media all and (max-width:768px){
-  .step{
-    display: inline-block;
-    padding: 0 20px 0 20px;
-  }
-  .video_box img{
-    width: 100px;
-    height: 100px;
-    margin: 2%;
-  }
-  .StartButton {
-    font-size: 90%;
-    }
-    .GalleryButton {
-    font-size: 60%;
-    }
-  .SaveButton{
-    margin: 15px 5% 0 0 ;
-  }
-  .ShareButton{
-    font-size: 25px;
-    margin: 15px 0 0 5% ;
-  }
-  .RetryButton {
-    font-size: 25px;
-  }
+.btn-lg:hover{
+  position: relative;
+  top: -50px;
+  box-shadow:200px 200px 200px 200px rgba(0,0,0,0.5) inset;
+  background-color:#212529;
+  border-color: #212529;
+  color:ghostwhite;
 }
-@media all and (max-width:360px){
-  .Page-header h1 {
-    font-size: 120%;
+
+@media (min-width: 768px) {
+  .masthead_home {
+    padding-top: 12rem;
+    padding-bottom: 35rem;/*바꿈*/
   }
-  .Page-header h3 {
-    font-size: 80%;
+  .masthead_home .masthead-createheading {
+    position: relative;
+    top: 50px;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
   }
-  .step{
-    display: inline-block;
-    padding: 0 0 0 0;
-    font-size: 10px;
+  .masthead_home .masthead-subheading {
+    position:relative;
+    top: 20px;
+    font-size: 2.25rem;
+    font-style: italic;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
   }
-  .video_box img{
-    width: 100px;
-    height: 100px;
-    margin: 2%;
+  .masthead_home .masthead-heading {
+    position:relative;
+    top: 50px;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
   }
-  .SaveButton{
-    font-size: 50%;
-    margin: 15px 0 0 0 ;
+  
+  .btn-lg{
+    position:relative;
+    top: -10px;
+    background-color:#212529;
+    margin: 4% 2% 0 0 ;
+    color:ghostwhite;
+    padding: 2% 3% 2% 3%;
+    font-size: 3.5rem;
+    line-height: 1.3333333;
+    border-radius: 6px;
   }
-  .ShareButton{
-    font-size: 50%;
-    margin: 15px 0 0 0 ;
+  .btn-lg:hover{
+    position:relative;
+    top: -10px;
+    box-shadow:200px 200px 200px 200px rgba(0,0,0,0.5) inset;
+    background-color:#212529;
+    border-color: #212529;
   }
+  
 }
