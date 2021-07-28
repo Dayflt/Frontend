@@ -57,14 +57,14 @@
 ## 🔧 Directory Structure
 ```bash
 ├── Frontend/
-    ├── public/                                   - Static 파일들 저장된 폴더
-    │    ├── index.html                           - React 프로젝트가 표시될 파일
-    │    └── logo.ico                             - favicon
-    ├── package.json & package.lock.json          - 라이브러리를 관리하는 파일 
+    ├── public/
+    │    ├── index.html                           - React 프로젝트 표시(favicon, title설정)
+    │    └── logo.ico                             - 웹페이지 favicon
+    ├── package.json & package.lock.json          - 라이브러리 관리 파일 
     ├── node_modules
     └── src/ 
-         ├── index.js & index.css
-         ├── App.js & App.css
+         ├── index.js & index.css                 - React 프로젝트 파일
+         ├── App.js & App.css                     - page component 관리 파일 
          ├── App.test.js & setupTest.js
          ├── reportWebVitals.js
          ├── api.jsx                              - baseURL 설정
